@@ -1,0 +1,76 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "chablis",
+        "name": "Chablis",
+        "summary": "Steely, mineral Chardonnay from ancient Kimmeridgian limestone — the northernmost outpost of Burgundy, geographically isolated ~80km northwest of the Côte d'Or.",
+        "grapes": "Chardonnay",
+        "style": "Lean, crisp, flinty. Oyster shell, green apple, citrus. Unoaked or old oak.",
+        "schematic": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[4.42, 47.72], [5.00, 47.72], [5.00, 47.52], [4.42, 47.52], [4.42, 47.72]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "cote-de-nuits",
+        "name": "Côte de Nuits",
+        "summary": "A narrow limestone escarpment south of Dijon, home to Burgundy's greatest red Grands Crus — Chambertin, Musigny, Romanée-Conti.",
+        "grapes": "Pinot Noir",
+        "style": "Rich, structured, dark-fruited reds with extraordinary aging potential."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[4.62, 47.42], [5.18, 47.42], [5.18, 47.08], [4.62, 47.08], [4.62, 47.42]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "cote-de-beaune",
+        "name": "Côte de Beaune",
+        "summary": "Produces Burgundy's greatest white wines alongside elegant reds. Montrachet, Meursault, Corton are the benchmarks.",
+        "grapes": "Chardonnay, Pinot Noir",
+        "style": "Whites: rich, nutty, mineral. Reds: softer and more supple than Côte de Nuits."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[4.52, 47.07], [5.08, 47.07], [5.08, 46.83], [4.52, 46.83], [4.52, 47.07]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "cote-chalonnaise",
+        "name": "Côte Chalonnaise",
+        "summary": "Outstanding value — Mercurey, Givry, Rully, and Montagny offer Burgundian quality at fair prices.",
+        "grapes": "Pinot Noir, Chardonnay",
+        "style": "Lighter, earlier-drinking than the Côte d'Or but with real terroir character."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[4.40, 46.82], [4.98, 46.82], [4.98, 46.57], [4.40, 46.57], [4.40, 46.82]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "maconnais",
+        "name": "Mâconnais",
+        "summary": "A large, warm southern zone producing accessible Chardonnay, including the famous Pouilly-Fuissé.",
+        "grapes": "Chardonnay (mostly), Gamay",
+        "style": "Ripe, approachable whites with stone-fruit and floral notes. Usually unoaked."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[4.30, 46.56], [5.10, 46.56], [5.10, 46.05], [4.30, 46.05], [4.30, 46.56]]]
+      }
+    }
+  ]
+}

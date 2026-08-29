@@ -1,0 +1,112 @@
+[
+  {
+    "id": "domaine-rousseau",
+    "name": "Domaine Armand Rousseau",
+    "village": "gevrey-chambertin",
+    "regionId": "cote-de-nuits",
+    "founded": 1919,
+    "style": "Precise, structured, and long-lived. The benchmark estate for Gevrey-Chambertin.",
+    "keyWines": ["Chambertin", "Chambertin Clos de Bèze", "Clos St-Jacques"],
+    "website": ""
+  },
+  {
+    "id": "domaine-leroy",
+    "name": "Domaine Leroy",
+    "village": "vosne-romanee",
+    "regionId": "cote-de-nuits",
+    "founded": 1988,
+    "style": "Biodynamic farming, tiny yields, extraordinary concentration. Among Burgundy's most sought-after wines.",
+    "keyWines": ["Musigny", "Chambertin", "Richebourg"],
+    "website": ""
+  },
+  {
+    "id": "domaine-drc",
+    "name": "Domaine de la Romanée-Conti",
+    "village": "vosne-romanee",
+    "regionId": "cote-de-nuits",
+    "founded": 1869,
+    "style": "The most famous estate in Burgundy. Ethereal, complex, and virtually unobtainable.",
+    "keyWines": ["Romanée-Conti", "La Tâche", "Richebourg", "Montrachet"],
+    "website": ""
+  },
+  {
+    "id": "domaine-roumier",
+    "name": "Domaine Georges Roumier",
+    "village": "chambolle-musigny",
+    "regionId": "cote-de-nuits",
+    "founded": 1924,
+    "style": "Silky, precise, floral. Benchmark producer for Chambolle-Musigny and Morey-Saint-Denis.",
+    "keyWines": ["Musigny", "Bonnes Mares", "Chambolle-Musigny Les Amoureuses"],
+    "website": ""
+  },
+  {
+    "id": "domaine-mugnier",
+    "name": "Domaine J.-F. Mugnier",
+    "village": "chambolle-musigny",
+    "regionId": "cote-de-nuits",
+    "founded": 1863,
+    "style": "Elegant, translucent Pinot Noir with exceptional precision. Custodian of the monopole Clos de la Maréchale.",
+    "keyWines": ["Musigny", "Chambolle-Musigny Les Amoureuses", "Clos de la Maréchale"],
+    "website": ""
+  },
+  {
+    "id": "domaine-dujac",
+    "name": "Domaine Dujac",
+    "village": "morey-saint-denis",
+    "regionId": "cote-de-nuits",
+    "founded": 1967,
+    "style": "Whole-cluster fermentation produces perfumed, complex wines across Morey-Saint-Denis and beyond.",
+    "keyWines": ["Clos Saint-Denis", "Clos de la Roche", "Chambolle-Musigny Les Gruenchers"],
+    "website": ""
+  },
+  {
+    "id": "comtes-lafon",
+    "name": "Domaine des Comtes Lafon",
+    "village": "meursault",
+    "regionId": "cote-de-beaune",
+    "founded": 1894,
+    "style": "The reference producer for Meursault whites — rich, mineral, and age-worthy.",
+    "keyWines": ["Meursault Perrières", "Meursault Charmes", "Montrachet"],
+    "website": ""
+  },
+  {
+    "id": "domaine-leflaive",
+    "name": "Domaine Leflaive",
+    "village": "puligny-montrachet",
+    "regionId": "cote-de-beaune",
+    "founded": 1905,
+    "style": "The reference domaine for Puligny-Montrachet. Biodynamic since 1997, producing whites of extraordinary purity and tension.",
+    "keyWines": ["Chevalier-Montrachet", "Bâtard-Montrachet", "Puligny-Montrachet Les Pucelles"],
+    "website": ""
+  },
+  {
+    "id": "domaine-coche-dury",
+    "name": "Domaine J-F Coche-Dury",
+    "village": "meursault",
+    "regionId": "cote-de-beaune",
+    "founded": 1920,
+    "style": "Cult producer of Meursault and Corton-Charlemagne. Wines of unmatched richness and mineral depth — nearly impossible to obtain.",
+    "keyWines": ["Corton-Charlemagne", "Meursault Perrières", "Meursault Rougeots"],
+    "website": ""
+  },
+  {
+    "id": "domaine-raveneau",
+    "name": "Domaine Raveneau",
+    "village": "chablis",
+    "regionId": "chablis",
+    "founded": 1948,
+    "style": "Benchmark Chablis — steely, mineral, long-lived. Uses old oak without masking terroir.",
+    "keyWines": ["Chablis Les Clos", "Chablis Blanchot", "Chablis Montée de Tonnerre"],
+    "website": ""
+  },
+  {
+    "id": "domaine-gouges",
+    "name": "Domaine Henri Gouges",
+    "village": "nuits-saint-georges",
+    "regionId": "cote-de-nuits",
+    "founded": 1919,
+    "style": "Pioneer of estate-bottling in Burgundy. Benchmark producer for the firm, structured reds of Nuits-Saint-Georges.",
+    "keyWines": ["Nuits-Saint-Georges Les Saint-Georges", "Nuits-Saint-Georges Les Pruliers", "Nuits-Saint-Georges Clos des Porrets"],
+    "website": ""
+  }
+]

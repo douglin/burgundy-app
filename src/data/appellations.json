@@ -1,0 +1,332 @@
+[
+  {
+    "id": "gevrey-chambertin",
+    "name": "Gevrey-Chambertin",
+    "regionId": "cote-de-nuits",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "Full-bodied, firm tannins, dark fruit (blackcurrant, plum), earthy. The most powerful village of the Côte de Nuits. Ages 10–20 years.",
+    "agingRules": "Minimum 18 months in oak for village-level reds.",
+    "keyProducers": ["Armand Rousseau", "Dugat-Py", "Rossignol-Trapet", "Denis Mortet"],
+    "facts": [
+      "The largest appellation in Côte de Nuits by area",
+      "Contains 9 Grands Crus, more than any other Burgundy village",
+      "Chambertin was Napoleon's favorite wine"
+    ]
+  },
+  {
+    "id": "chambolle-musigny",
+    "name": "Chambolle-Musigny",
+    "regionId": "cote-de-nuits",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The most delicate and floral village of the Côte de Nuits. Violets, rose petal, red fruit. Silky texture, fine tannins. The 'feminine' counterpart to Gevrey.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Georges Roumier", "Ghislaine Barthod", "Leroy", "de Vogüé"],
+    "facts": [
+      "Home to the legendary Grand Cru Musigny",
+      "Les Amoureuses Premier Cru fetches prices rivaling many Grands Crus",
+      "The village name combines 'Chambolle' and the Musigny vineyard"
+    ]
+  },
+  {
+    "id": "meursault",
+    "name": "Meursault",
+    "regionId": "cote-de-beaune",
+    "level": "village",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "Rich, nutty, buttery white Burgundy. Toasted hazelnut, white peach, lanolin, and a mineral finish. The most important white wine village of the Côte de Beaune.",
+    "agingRules": "Minimum 12 months in oak for whites.",
+    "keyProducers": ["Comtes Lafon", "Pierre Morey", "Jean-Marc Roulot", "Coche-Dury"],
+    "facts": [
+      "No Grand Crus, but Premiers Crus like Perrières and Charmes rival Grand Cru quality",
+      "The Paulée de Meursault is one of Burgundy's great annual wine festivals",
+      "Also produces a small amount of red under the Meursault AOC"
+    ]
+  },
+  {
+    "id": "chablis",
+    "name": "Chablis",
+    "regionId": "chablis",
+    "level": "village",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "Lean, crisp, steely. Oyster shell, green apple, citrus, and flinty minerality. The antithesis of oaky Chardonnay. Often unoaked or aged in old oak.",
+    "agingRules": "Typically aged in stainless steel; some producers use old oak.",
+    "keyProducers": ["William Fèvre", "Domaine Raveneau", "Christian Moreau", "Dauvissat"],
+    "facts": [
+      "Grown on Kimmeridgian limestone with fossilized oyster shells — unique in the world",
+      "Four quality levels: Petit Chablis, Chablis, Premier Cru, Grand Cru",
+      "Geographically isolated ~80km northwest of the Côte d'Or"
+    ]
+  },
+  {
+    "id": "chablis-village",
+    "name": "Chablis",
+    "regionId": "chablis",
+    "level": "village",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "Lean, crisp, steely. Oyster shell, green apple, citrus, and flinty minerality. The antithesis of oaky Chardonnay. Often unoaked or aged in old oak.",
+    "agingRules": "Typically aged in stainless steel; some producers use old oak.",
+    "keyProducers": ["William Fèvre", "Domaine Raveneau", "Christian Moreau", "Dauvissat"],
+    "facts": [
+      "Grown on Kimmeridgian limestone with fossilized oyster shells",
+      "Four quality levels: Petit Chablis, Chablis, Premier Cru, Grand Cru",
+      "7 Grands Crus all situated on a single southeast-facing slope north of the town"
+    ]
+  },
+  {
+    "id": "marsannay",
+    "name": "Marsannay",
+    "regionId": "cote-de-nuits",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay", "Pinot Blanc"] },
+    "style": "The only Côte de Nuits village that produces all three colours. The rosé is legendary — dry, mineral, strawberry-scented. Reds are lighter and earlier-drinking than its southern neighbours.",
+    "agingRules": "Standard village aging minimums apply.",
+    "keyProducers": ["Bruno Clair", "Sylvain Pataille", "Fougeray de Beauclair"],
+    "facts": [
+      "The only Côte de Nuits AOC permitted to make rosé",
+      "Historically the northern gateway to the Côte de Nuits, just south of Dijon",
+      "Gained village AOC status only in 1987"
+    ]
+  },
+  {
+    "id": "morey-saint-denis",
+    "name": "Morey-Saint-Denis",
+    "regionId": "cote-de-nuits",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "Often overlooked between the famous Gevrey and Chambolle. Dark, structured, meaty reds with great aging potential. A hidden gem of the Côte de Nuits.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Dujac", "Ponsot", "Clos des Lambrays", "Lignier-Michelot"],
+    "facts": [
+      "Contains 5 Grands Crus: Clos de la Roche, Clos Saint-Denis, Clos des Lambrays, Clos de Tart, and part of Bonnes-Mares",
+      "Sandwiched between Gevrey-Chambertin and Chambolle-Musigny",
+      "Clos de Tart is a monopole (single-owner Grand Cru) owned by Artémis Domaines"
+    ]
+  },
+  {
+    "id": "vougeot",
+    "name": "Vougeot",
+    "regionId": "cote-de-nuits",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "Dominated by Clos de Vougeot, a 50ha Grand Cru owned by over 80 producers. Quality varies enormously by producer. The best examples are perfumed, rich, and complex.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Leroy", "Méo-Camuzet", "Drouhin-Laroze", "Georges Roumier"],
+    "facts": [
+      "Clos de Vougeot is the largest Grand Cru in the Côte de Nuits at ~50 hectares",
+      "The château at its centre is now the headquarters of the Confrérie des Chevaliers du Tastevin",
+      "Over 80 different producers own parcels within Clos de Vougeot — quality varies dramatically"
+    ]
+  },
+  {
+    "id": "vosne-romanee",
+    "name": "Vosne-Romanée",
+    "regionId": "cote-de-nuits",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The most prestigious village in all of Burgundy. Silky, velvety, hauntingly complex. Spice, dark fruit, forest floor, and a perfumed length that can last for decades.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Domaine de la Romanée-Conti", "Leroy", "Méo-Camuzet", "Gros"],
+    "facts": [
+      "Home to the world's most expensive wine: Romanée-Conti Grand Cru (~1.8 hectares, ~5,000 bottles per year)",
+      "Contains 6 Grands Crus: Romanée-Conti, La Tâche, Richebourg, Romanée-Saint-Vivant, Grands-Echézeaux, Echézeaux",
+      "Even the village-level wines regularly outperform Grand Crus from lesser appellations"
+    ]
+  },
+  {
+    "id": "nuits-saint-georges",
+    "name": "Nuits-Saint-Georges",
+    "regionId": "cote-de-nuits",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "Structured, earthy, and firm — the most 'masculine' of the Côte de Nuits villages. Dark fruit, game, and truffles. Requires patience; opens up beautifully after 8–15 years.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Henri Gouges", "Faiveley", "Leroy", "Méo-Camuzet"],
+    "facts": [
+      "No Grand Crus, but boasts 41 Premiers Crus — more than any other Burgundy village",
+      "The commercial capital of the Côte de Nuits — home to many négociants",
+      "The town added 'Saint-Georges' (its best Premier Cru) to its name in 1892 for marketing purposes"
+    ]
+  },
+  {
+    "id": "aloxe-corton",
+    "name": "Aloxe-Corton",
+    "regionId": "cote-de-beaune",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "Produces the only red Grand Cru of the Côte de Beaune: Corton. Firm, structured reds that need time. The white Corton-Charlemagne is a majestic, mineral Chardonnay.",
+    "agingRules": "Grand Cru minimum 18 months in oak; village minimum 12 months.",
+    "keyProducers": ["Bonneau du Martray", "Tollot-Beaut", "Michel Juillot", "Chandon de Briailles"],
+    "facts": [
+      "Corton is the only red Grand Cru in the Côte de Beaune",
+      "Corton-Charlemagne — named after Charlemagne who owned vines here in the 8th century — is one of Burgundy's greatest whites",
+      "The Corton hill is shared between Aloxe-Corton, Ladoix-Serrigny, and Pernand-Vergelesses"
+    ]
+  },
+  {
+    "id": "beaune",
+    "name": "Beaune",
+    "regionId": "cote-de-beaune",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "Fragrant, medium-bodied, elegant reds. Supple and approachable earlier than Pommard. The Premiers Crus (Grèves, Clos des Mouches) can be outstanding.",
+    "agingRules": "Minimum 12 months in oak.",
+    "keyProducers": ["Drouhin", "Bouchard Père et Fils", "Louis Jadot", "Chanson"],
+    "facts": [
+      "The wine capital of Burgundy — home to many major négociant houses",
+      "No Grand Crus, but 42 Premiers Crus covering most of the appellation",
+      "The Hospices de Beaune charity auction, held every November, is the world's greatest wine auction"
+    ]
+  },
+  {
+    "id": "pommard",
+    "name": "Pommard",
+    "regionId": "cote-de-beaune",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The most full-bodied and tannic red of the Côte de Beaune. Dark fruit, game, earthy. Requires 10+ years to soften. Les Rugiens and Les Epenots are the top Premiers Crus.",
+    "agingRules": "Minimum 12 months in oak.",
+    "keyProducers": ["Comte Armand", "Pousse d'Or", "de Montille", "Leroy"],
+    "facts": [
+      "No Grand Crus but often called the 'Gevrey-Chambertin of the Côte de Beaune' for its power",
+      "Only red wine is produced here — no white Pommard AOC exists",
+      "The commune is entirely enclosed by walls — all 340 hectares are Premier Cru or village level"
+    ]
+  },
+  {
+    "id": "puligny-montrachet",
+    "name": "Puligny-Montrachet",
+    "regionId": "cote-de-beaune",
+    "level": "village",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "The pinnacle of white Burgundy. Tense, mineral, complex. Almonds, white flowers, citrus, and a stony finish. Grand Crus (Montrachet, Chevalier) are among the greatest wines on earth.",
+    "agingRules": "Minimum 12 months in oak; Grand Crus often 18+ months.",
+    "keyProducers": ["Leflaive", "Sauzet", "Carillon", "Chartron"],
+    "facts": [
+      "Shares the Grand Cru Montrachet with neighbouring Chassagne-Montrachet",
+      "Grand Crus: Montrachet, Chevalier-Montrachet, Bâtard-Montrachet (partial), Bienvenues-Bâtard-Montrachet",
+      "Alexandre Dumas said Montrachet should be drunk 'kneeling, with head bowed'"
+    ]
+  },
+  {
+    "id": "chassagne-montrachet",
+    "name": "Chassagne-Montrachet",
+    "regionId": "cote-de-beaune",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "Whites are richer and broader than Puligny — more golden and nutty. Reds are often underrated, producing earthy, medium-bodied Pinot Noir at fair prices.",
+    "agingRules": "Minimum 12 months in oak.",
+    "keyProducers": ["Ramonet", "Niellon", "Colin", "Jean-Noël Gagnard"],
+    "facts": [
+      "Shares Grand Crus Montrachet and Bâtard-Montrachet with Puligny-Montrachet",
+      "Unlike Puligny, makes a significant amount of red wine (about 40% of production)",
+      "Often better value than Puligny at village level for comparable quality"
+    ]
+  },
+  {
+    "id": "santenay",
+    "name": "Santenay",
+    "regionId": "cote-de-beaune",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "Earthy, rustic, reliable reds at the southern tip of the Côte de Beaune. Good value. Les Gravières and La Comme are the standout Premiers Crus.",
+    "agingRules": "Minimum 12 months in oak.",
+    "keyProducers": ["Lucien Muzard", "Vincent Girardin", "Pousse d'Or"],
+    "facts": [
+      "The southernmost village of the Côte de Beaune proper",
+      "A spa town — the mineral springs have attracted visitors since Roman times",
+      "Often overlooked, offering honest village-level Burgundy at approachable prices"
+    ]
+  },
+  {
+    "id": "mercurey",
+    "name": "Mercurey",
+    "regionId": "cote-chalonnaise",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "The most serious red appellation of the Côte Chalonnaise. Firm, structured, earthy. Dark cherry, hints of smoke. Good aging potential for the price.",
+    "agingRules": "Minimum 12 months in oak.",
+    "keyProducers": ["Faiveley", "Michel Juillot", "Bruno Lorenzon", "Antonin Rodet"],
+    "facts": [
+      "The largest and most important appellation of the Côte Chalonnaise",
+      "32 Premiers Crus — the most of any Chalonnaise village",
+      "Named after the Roman god Mercury, reflecting the area's ancient wine-trading history"
+    ]
+  },
+  {
+    "id": "givry",
+    "name": "Givry",
+    "regionId": "cote-chalonnaise",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "Lighter and more elegant than Mercurey. Cherry, raspberry, a touch of spice. Approachable young but rewards some cellaring. White Givry is floral and fresh.",
+    "agingRules": "Minimum 12 months in oak.",
+    "keyProducers": ["Joblot", "Thenard", "Masse Père et Fils"],
+    "facts": [
+      "Reportedly the favourite wine of King Henri IV of France",
+      "About 85% of production is red wine",
+      "Located on the western bank of the Saône plain"
+    ]
+  },
+  {
+    "id": "rully",
+    "name": "Rully",
+    "regionId": "cote-chalonnaise",
+    "level": "village",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "Best known for whites and Crémant de Bourgogne. Light, floral Chardonnay with good freshness. Reds are light and perfumed. Excellent entry-level Burgundy.",
+    "agingRules": "Minimum 12 months in oak.",
+    "keyProducers": ["Domaine de la Folie", "Jacqueson", "Dureuil-Janthial"],
+    "facts": [
+      "One of the main production centres for Crémant de Bourgogne (Burgundy sparkling wine)",
+      "About 60% of production is white wine — unusual for the Chalonnaise",
+      "23 Premiers Crus offering excellent value"
+    ]
+  },
+  {
+    "id": "pouilly-fuisse",
+    "name": "Pouilly-Fuissé",
+    "regionId": "maconnais",
+    "level": "village",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "The flagship of the Mâconnais. Richer and more golden than Chablis. Stone fruit, white flower, subtle oak. Can age well — 5 to 10 years for top examples.",
+    "agingRules": "Often aged in oak barrels; some producers use new oak.",
+    "keyProducers": ["Château Fuissé", "Domaine Valette", "Verget", "Corsin"],
+    "facts": [
+      "Premiers Crus status was officially granted in 2020 — a major step up for the appellation",
+      "The vineyards are overshadowed by the dramatic Rock of Solutré and Rock of Vergisson",
+      "Despite its reputation, many examples offer fair value versus Côte de Beaune whites"
+    ]
+  },
+  {
+    "id": "macon",
+    "name": "Mâcon",
+    "regionId": "maconnais",
+    "level": "village",
+    "grapes": { "red": ["Gamay", "Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "Accessible, approachable, everyday Burgundy. Fresh white fruit, light body, clean finish. Best drunk young and fresh. The entry point to white Burgundy.",
+    "agingRules": "Typically unoaked or lightly oaked; drink within 3–4 years.",
+    "keyProducers": ["Cave de Lugny", "Louis Jadot", "Verget", "Guffens-Heynen"],
+    "facts": [
+      "Mâcon-Villages (or Mâcon + village name) indicates superior quality from specific villages",
+      "The Mâconnais is the largest sub-region of Burgundy by area",
+      "About 80% of production is white wine (Chardonnay)"
+    ]
+  },
+  {
+    "id": "saint-veran",
+    "name": "Saint-Véran",
+    "regionId": "maconnais",
+    "level": "village",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "Fresh, fruity, unoaked Chardonnay. Pear, white flowers, a touch of almond. Rounder and fuller than Mâcon, leaner than Pouilly-Fuissé. Excellent value.",
+    "agingRules": "Usually unoaked or old oak; drink within 4–5 years.",
+    "keyProducers": ["Deux Roches", "Corsin", "Michel Forest"],
+    "facts": [
+      "Surrounds Pouilly-Fuissé on three sides — often compared favourably at a lower price",
+      "The appellation was created in 1971 as an alternative to Beaujolais Blanc",
+      "Includes villages as far south as Saint-Amour, bordering Beaujolais"
+    ]
+  }
+]

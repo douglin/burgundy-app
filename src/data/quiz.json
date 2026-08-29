@@ -1,0 +1,177 @@
+[
+  {
+    "id": "q-001",
+    "question": "Which village contains the Grand Cru Chambertin?",
+    "answer": "Gevrey-Chambertin",
+    "distractors": ["Morey-Saint-Denis", "Chambolle-Musigny", "Vosne-Romanée"],
+    "category": "geography"
+  },
+  {
+    "id": "q-002",
+    "question": "What is the only red grape permitted in Burgundy AOC red wines?",
+    "answer": "Pinot Noir",
+    "distractors": ["Gamay", "Cabernet Sauvignon", "Syrah"],
+    "category": "grapes"
+  },
+  {
+    "id": "q-003",
+    "question": "What is the only white grape permitted in white Burgundy AOC wines?",
+    "answer": "Chardonnay",
+    "distractors": ["Aligoté", "Pinot Gris", "Viognier"],
+    "category": "grapes"
+  },
+  {
+    "id": "q-004",
+    "question": "Which of these is a Grand Cru in Chablis?",
+    "answer": "Les Clos",
+    "distractors": ["Montée de Tonnerre", "Fourchaume", "Vaillons"],
+    "category": "geography"
+  },
+  {
+    "id": "q-005",
+    "question": "Which estate is considered the most famous in all of Burgundy?",
+    "answer": "Domaine de la Romanée-Conti",
+    "distractors": ["Domaine Leroy", "Domaine Rousseau", "Domaine Leflaive"],
+    "category": "producers"
+  },
+  {
+    "id": "q-006",
+    "question": "Which region of Burgundy is known for producing the leanest, most mineral Chardonnay?",
+    "answer": "Chablis",
+    "distractors": ["Côte de Beaune", "Mâconnais", "Côte Chalonnaise"],
+    "category": "geography"
+  },
+  {
+    "id": "q-007",
+    "question": "What soil type gives Chablis its distinctive flinty character?",
+    "answer": "Kimmeridgian limestone",
+    "distractors": ["Granite", "Clay and gravel", "Volcanic basalt"],
+    "category": "geography"
+  },
+  {
+    "id": "q-008",
+    "question": "Which vintage is widely considered a classic great year for Côte de Nuits reds?",
+    "answer": "2015",
+    "distractors": ["2013", "2011", "2007"],
+    "category": "vintage"
+  },
+  {
+    "id": "q-009",
+    "question": "What does 'Premier Cru' mean in Burgundy?",
+    "answer": "First Growth — the second-highest quality level below Grand Cru",
+    "distractors": ["The highest quality level", "A village-level appellation", "A negociant classification"],
+    "category": "geography"
+  },
+  {
+    "id": "q-010",
+    "question": "Which village in Côte de Nuits is known for the most 'feminine', floral style of Pinot Noir?",
+    "answer": "Chambolle-Musigny",
+    "distractors": ["Gevrey-Chambertin", "Nuits-Saint-Georges", "Morey-Saint-Denis"],
+    "category": "geography"
+  },
+  {
+    "id": "q-011",
+    "question": "Which producer is the reference point for Meursault white Burgundy?",
+    "answer": "Domaine des Comtes Lafon",
+    "distractors": ["Domaine Raveneau", "Domaine Leflaive", "Domaine Roumier"],
+    "category": "producers"
+  },
+  {
+    "id": "q-012",
+    "question": "How many Grand Cru appellations are there in Chablis?",
+    "answer": "7",
+    "distractors": ["3", "9", "1"],
+    "category": "geography"
+  },
+  {
+    "id": "q-013",
+    "question": "Which Grand Cru white wine is often called the world's greatest?",
+    "answer": "Montrachet",
+    "distractors": ["Corton-Charlemagne", "Chablis Les Clos", "Chevalier-Montrachet"],
+    "category": "geography"
+  },
+  {
+    "id": "q-014",
+    "question": "What does 'négociant' mean in Burgundy?",
+    "answer": "A merchant who buys grapes or wine from growers and sells under their own label",
+    "distractors": ["A grower who bottles their own wine", "A cooperative of small producers", "A government wine inspector"],
+    "category": "producers"
+  },
+  {
+    "id": "q-015",
+    "question": "Which appellation contains Burgundy's only red Grand Cru in the Côte de Beaune?",
+    "answer": "Corton",
+    "distractors": ["Pommard", "Volnay", "Beaune"],
+    "category": "geography"
+  },
+  {
+    "id": "q-016",
+    "question": "Which village in Côte de Beaune is most celebrated for its white Grand Crus?",
+    "answer": "Puligny-Montrachet",
+    "distractors": ["Pommard", "Volnay", "Nuits-Saint-Georges"],
+    "category": "geography"
+  },
+  {
+    "id": "q-017",
+    "question": "Which Premier Cru in Chambolle-Musigny is nicknamed 'The Lovers'?",
+    "answer": "Les Amoureuses",
+    "distractors": ["Les Gruenchers", "Les Charmes", "Les Fuées"],
+    "category": "geography"
+  },
+  {
+    "id": "q-018",
+    "question": "Clos de Vougeot Grand Cru covers approximately how many hectares?",
+    "answer": "50 hectares",
+    "distractors": ["8 hectares", "28 hectares", "100 hectares"],
+    "category": "geography"
+  },
+  {
+    "id": "q-019",
+    "question": "What does 'clos' mean in Burgundy wine terminology?",
+    "answer": "A walled vineyard",
+    "distractors": ["A south-facing hillside plot", "A single-owner monopole", "A negociant selection"],
+    "category": "geography"
+  },
+  {
+    "id": "q-020",
+    "question": "Which region of Burgundy is the source of most affordable everyday white Burgundy?",
+    "answer": "Mâconnais",
+    "distractors": ["Côte Chalonnaise", "Chablis", "Côte de Beaune"],
+    "category": "geography"
+  },
+  {
+    "id": "q-021",
+    "question": "Domaine Leflaive is the benchmark estate for which village?",
+    "answer": "Puligny-Montrachet",
+    "distractors": ["Meursault", "Chassagne-Montrachet", "Chablis"],
+    "category": "producers"
+  },
+  {
+    "id": "q-022",
+    "question": "Which Côte Chalonnaise village is known for producing Crémant de Bourgogne sparkling wine?",
+    "answer": "Rully",
+    "distractors": ["Mercurey", "Givry", "Saint-Véran"],
+    "category": "geography"
+  },
+  {
+    "id": "q-023",
+    "question": "Pinot Noir from Pommard is typically described as:",
+    "answer": "Robust, tannic, and structured",
+    "distractors": ["Delicate, floral, and silky", "Light-bodied and fruity", "Mineral and flinty"],
+    "category": "geography"
+  },
+  {
+    "id": "q-024",
+    "question": "How many Grand Crus are within or directly adjacent to Gevrey-Chambertin?",
+    "answer": "9",
+    "distractors": ["3", "6", "12"],
+    "category": "geography"
+  },
+  {
+    "id": "q-025",
+    "question": "What grape variety is used to make Bourgogne Aligoté?",
+    "answer": "Aligoté",
+    "distractors": ["Chardonnay", "Pinot Blanc", "Pinot Gris"],
+    "category": "grapes"
+  }
+]
