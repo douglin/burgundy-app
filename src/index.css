@@ -27,3 +27,17 @@ html, body {
 h1, h2, h3, h4 {
   font-family: 'Playfair Display', Georgia, serif;
 }
+
+.burg-tooltip {
+  background: #2C1810 !important;
+  color: #F5F0E8 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-size: 11px;
+  padding: 4px 10px;
+  box-shadow: 1px 2px 6px rgba(0,0,0,0.35) !important;
+}
+.burg-tooltip.leaflet-tooltip-top::before,
+.burg-tooltip.leaflet-tooltip-bottom::before,
+.burg-tooltip.leaflet-tooltip-left::before,
+.burg-tooltip.leaflet-tooltip-right::before { display: none; }

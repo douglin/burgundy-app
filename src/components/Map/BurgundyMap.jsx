@@ -1,5 +1,6 @@
-import * as d3 from 'd3'
+import L from 'leaflet'
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { CircleMarker, GeoJSON, MapContainer, TileLayer, Tooltip, useMap, useMapEvents } from 'react-leaflet'
 
 const REGION_FILL = {
   'chablis':           '#7A6248',
@@ -27,23 +28,79 @@ const CRU_HOVER = {
   'premier-cru': '#C8C8C8',
 }
 
+function regionStyle(id, selectedRegion) {
+  const isDimmed = selectedRegion && selectedRegion.id !== id
+  const isSelected = selectedRegion?.id === id
+  return {
+    fillColor: REGION_FILL[id],
+    fillOpacity: isDimmed ? 0.10 : 0.72,
+    color: '#F5F0E8',
+    weight: isSelected ? 2.5 : 0.8,
+    opacity: isDimmed ? 0.4 : 1,
+  }
+}
+
+function MapController({ selectedRegion, selectedVillage, regions, crus }) {
+  const map = useMap()
+
+  useEffect(() => {
+    if (!regions) return
+    if (!selectedRegion) {
+      map.flyToBounds(L.geoJSON(regions).getBounds().pad(0.05), { duration: 0.55 })
+      return
+    }
+    if (selectedVillage) {
+      const vc = crus?.features.filter(f => f.properties.villageId === selectedVillage.id) || []
+      if (vc.length) {
+        map.flyToBounds(
+          L.geoJSON({ type: 'FeatureCollection', features: vc }).getBounds().pad(0.6),
+          { duration: 0.7, maxZoom: 15 }
+        )
+      } else {
+        const [lon, lat] = selectedVillage.coordinates
+        map.flyTo([lat, lon], 13, { duration: 0.7 })
+      }
+      return
+    }
+    const feat = regions.features.find(f => f.properties.id === selectedRegion.id)
+    if (feat) {
+      map.flyToBounds(L.geoJSON(feat).getBounds().pad(0.2), { duration: 0.65, maxZoom: 11 })
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedRegion?.id, selectedVillage?.id])
+
+  return null
+}
+
+function BackgroundClick({ onClearRef }) {
+  useMapEvents({
+    click() { onClearRef.current() }
+  })
+  return null
+}
+
 export default function BurgundyMap({
   selectedRegion, onSelectRegion,
   selectedVillage, onSelectVillage,
   onSelectCru,
 }) {
-  const svgRef = useRef(null)
-  const gRef = useRef(null)
-  const containerRef = useRef(null)
-  const zoomRef = useRef(null)
-  const [size, setSize] = useState({ w: 500, h: 750 })
   const [regions, setRegions] = useState(null)
   const [villages, setVillages] = useState(null)
   const [crus, setCrus] = useState(null)
-  const [hovered, setHovered] = useState(null)
-  const [tooltip, setTooltip] = useState(null)
-  const [zoomed, setZoomed] = useState(false)
-  const [zoomK, setZoomK] = useState(1)
+
+  const regionLayerRef = useRef(null)
+  const selectedRegionRef = useRef(selectedRegion)
+  const selectedVillageRef = useRef(selectedVillage)
+  const onClearRef = useRef(null)
+
+  useEffect(() => { selectedRegionRef.current = selectedRegion }, [selectedRegion])
+  useEffect(() => { selectedVillageRef.current = selectedVillage }, [selectedVillage])
+
+  // onClear: clicking map background deselects
+  onClearRef.current = () => {
+    if (selectedVillageRef.current) { onSelectVillage(null); return }
+    if (selectedRegionRef.current) { onSelectRegion(null) }
+  }
 
   useEffect(() => {
     Promise.all([
@@ -57,94 +114,34 @@ export default function BurgundyMap({
     })
   }, [])
 
+  // Restyle regions imperatively when selection changes
   useEffect(() => {
-    if (!containerRef.current) return
-    const obs = new ResizeObserver(([entry]) => {
-      const { width, height } = entry.contentRect
-      setSize({ w: Math.max(width, 200), h: Math.max(height, 300) })
+    regionLayerRef.current?.eachLayer(layer => {
+      const id = layer.feature.properties.id
+      layer.setStyle(regionStyle(id, selectedRegion))
     })
-    obs.observe(containerRef.current)
-    return () => obs.disconnect()
+  }, [selectedRegion])
+
+  const onEachRegion = useMemo(() => (feature, layer) => {
+    const { id, name } = feature.properties
+    layer.on({
+      mouseover(e) {
+        if (selectedRegionRef.current && selectedRegionRef.current.id !== id) return
+        layer.setStyle({ fillColor: REGION_HOVER[id], fillOpacity: 0.88 })
+      },
+      mouseout() {
+        layer.setStyle(regionStyle(id, selectedRegionRef.current))
+      },
+      click(e) {
+        L.DomEvent.stopPropagation(e)
+        if (selectedRegionRef.current && selectedRegionRef.current.id !== id) return
+        onSelectRegion(feature.properties)
+      },
+    })
+    layer.bindTooltip(name, { className: 'burg-tooltip', sticky: false, direction: 'top', offset: [0, -4] })
+  // onSelectRegion is stable (defined in Home.jsx)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
-  const { projection, pathGen } = useMemo(() => {
-    if (!regions) return {}
-    const pad = 40
-    const proj = d3.geoMercator().fitExtent(
-      [[pad, pad], [size.w - pad, size.h - pad]],
-      regions
-    )
-    return { projection: proj, pathGen: d3.geoPath().projection(proj) }
-  }, [regions, size])
-
-  useEffect(() => {
-    if (!svgRef.current) return
-    const zoom = d3.zoom()
-      .scaleExtent([1, 20])
-      .filter(() => false)
-      .on('zoom', event => {
-        d3.select(gRef.current).attr('transform', event.transform)
-        setZoomK(event.transform.k)
-      })
-    d3.select(svgRef.current).call(zoom)
-    zoomRef.current = zoom
-  }, [size])
-
-  // Zoom to region
-  useEffect(() => {
-    if (!selectedRegion || !pathGen || !svgRef.current || !regions || !zoomRef.current) return
-    if (selectedVillage) return // village zoom takes priority
-    const feature = regions.features.find(f => f.properties.id === selectedRegion.id)
-    if (!feature) return
-    const [[x0, y0], [x1, y1]] = pathGen.bounds(feature)
-    const dx = x1 - x0, dy = y1 - y0
-    const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2
-    const scale = Math.min(10, 0.82 / Math.max(dx / size.w, dy / size.h))
-    const tx = size.w / 2 - scale * cx
-    const ty = size.h / 2 - scale * cy
-    d3.select(svgRef.current)
-      .transition().duration(700).ease(d3.easeCubicInOut)
-      .call(zoomRef.current.transform, d3.zoomIdentity.translate(tx, ty).scale(scale))
-    setZoomed(true)
-  }, [selectedRegion, pathGen, regions, size, selectedVillage])
-
-  // Zoom to village
-  useEffect(() => {
-    if (!selectedVillage || !projection || !svgRef.current || !crus || !zoomRef.current) return
-    const villageCrus = crus.features.filter(f => f.properties.villageId === selectedVillage.id)
-    let cx, cy, scale
-
-    if (villageCrus.length > 0) {
-      // Compute bounds directly from geographic coordinates to avoid D3 path artifact issue
-      const coords = villageCrus.flatMap(f => f.geometry.coordinates[0])
-      const lons = coords.map(c => c[0])
-      const lats = coords.map(c => c[1])
-      const [x0, y1] = projection([Math.min(...lons), Math.min(...lats)])
-      const [x1, y0] = projection([Math.max(...lons), Math.max(...lats)])
-      const dx = Math.abs(x1 - x0), dy = Math.abs(y1 - y0)
-      cx = (x0 + x1) / 2; cy = (y0 + y1) / 2
-      scale = Math.min(18, 0.75 / Math.max(dx / size.w, dy / size.h))
-    } else {
-      // Fallback: zoom to village point
-      const [vx, vy] = projection(selectedVillage.coordinates)
-      cx = vx; cy = vy; scale = 14
-    }
-
-    const tx = size.w / 2 - scale * cx
-    const ty = size.h / 2 - scale * cy
-    d3.select(svgRef.current)
-      .transition().duration(700).ease(d3.easeCubicInOut)
-      .call(zoomRef.current.transform, d3.zoomIdentity.translate(tx, ty).scale(scale))
-  }, [selectedVillage, projection, crus, pathGen, size])
-
-  // Zoom back out on deselect
-  useEffect(() => {
-    if (selectedRegion || !zoomed || !svgRef.current || !zoomRef.current) return
-    d3.select(svgRef.current)
-      .transition().duration(550).ease(d3.easeCubicInOut)
-      .call(zoomRef.current.transform, d3.zoomIdentity)
-    setZoomed(false)
-  }, [selectedRegion, zoomed])
 
   const villagesInRegion = useMemo(() => {
     if (!villages || !selectedRegion) return []
@@ -156,161 +153,109 @@ export default function BurgundyMap({
     return crus.features.filter(f => f.properties.villageId === selectedVillage.id)
   }, [crus, selectedVillage])
 
-  function handleMouseMove(e, name) {
-    setTooltip({ x: e.clientX, y: e.clientY, name })
+  const onEachCru = useMemo(() => (feature, layer) => {
+    const { name, level } = feature.properties
+    const label = `${name} · ${level === 'grand-cru' ? 'Grand Cru' : 'Premier Cru'} · ${feature.properties.hectares} ha`
+    layer.on({
+      mouseover() { layer.setStyle({ fillColor: CRU_HOVER[level], fillOpacity: 0.95 }) },
+      mouseout() { layer.setStyle({ fillColor: CRU_FILL[level], fillOpacity: 0.85 }) },
+      click(e) {
+        L.DomEvent.stopPropagation(e)
+        onSelectCru && onSelectCru(feature.properties)
+      },
+    })
+    layer.bindTooltip(label, { className: 'burg-tooltip', sticky: false, direction: 'top', offset: [0, -4] })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  function cruStyle(feature) {
+    return {
+      fillColor: CRU_FILL[feature.properties.level],
+      fillOpacity: 0.85,
+      color: '#F5F0E8',
+      weight: 0.8,
+    }
   }
 
+  const initialBounds = useMemo(() => {
+    // Burgundy corridor + Chablis
+    return L.latLngBounds([[46.20, 3.60], [47.95, 5.10]])
+  }, [])
+
+  if (!regions) return <div className="w-full h-full bg-[#2C1810]" />
+
   return (
-    <div ref={containerRef} className="relative w-full h-full select-none">
-      <svg
-        ref={svgRef}
-        className="w-full h-full"
-        onClick={() => {
-          if (selectedVillage) { onSelectVillage(null); return }
-          if (selectedRegion) onSelectRegion(null)
-        }}
+    <div className="relative w-full h-full">
+      <MapContainer
+        bounds={initialBounds}
+        style={{ width: '100%', height: '100%' }}
+        zoomControl={true}
+        attributionControl={false}
       >
-        <g ref={gRef}>
-          {/* Region polygons */}
-          {regions && pathGen && regions.features.map(feature => {
-            const { id, name } = feature.properties
-            const isSelected = selectedRegion?.id === id
-            const isDimmed = selectedRegion && !isSelected
-            const isHovered = hovered === id && !isDimmed
-            const [cx, cy] = pathGen.centroid(feature)
+        <TileLayer
+          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          subdomains="abcd"
+          maxZoom={19}
+        />
 
-            return (
-              <g key={id}>
-                <path
-                  d={pathGen(feature)}
-                  fill={isHovered ? REGION_HOVER[id] : REGION_FILL[id]}
-                  fillOpacity={isDimmed ? 0.15 : 0.82}
-                  stroke="#F5F0E8"
-                  strokeWidth={isSelected ? 1.5 : 0.5}
-                  style={{ cursor: isDimmed ? 'default' : 'pointer', transition: 'fill-opacity 0.3s' }}
-                  onClick={e => { e.stopPropagation(); if (!isDimmed) onSelectRegion(feature.properties) }}
-                  onMouseEnter={e => { if (!isDimmed) { setHovered(id); handleMouseMove(e, name) } }}
-                  onMouseMove={e => { if (!isDimmed) handleMouseMove(e, name) }}
-                  onMouseLeave={() => { setHovered(null); setTooltip(null) }}
-                />
-                {!isDimmed && !isNaN(cx) && !selectedVillage && (
-                  <text
-                    x={cx} y={cy}
-                    textAnchor="middle" dominantBaseline="middle"
-                    fontSize={11} fontWeight="600"
-                    fontFamily="'Playfair Display', Georgia, serif"
-                    fill="#F5F0E8" fillOpacity={0.95}
-                    style={{ pointerEvents: 'none', letterSpacing: '0.03em' }}
-                  >
-                    {name}
-                  </text>
-                )}
-              </g>
-            )
-          })}
+        {/* Region polygons */}
+        <GeoJSON
+          key="regions"
+          data={regions}
+          style={feature => regionStyle(feature.properties.id, selectedRegion)}
+          onEachFeature={onEachRegion}
+          ref={regionLayerRef}
+        />
 
-          {/* Village dots — shown when region selected but no village selected */}
-          {selectedRegion && !selectedVillage && projection && villagesInRegion.map((feature, i) => {
-            const { id, name } = feature.properties
-            const [x, y] = projection(feature.geometry.coordinates)
-            if (isNaN(x) || isNaN(y)) return null
-            const isHoveredV = hovered === id
-            const labelSide = i % 2 === 0 ? 1 : -1
-            const labelX = labelSide > 0 ? x + 9 : x - 9
-            const anchor = labelSide > 0 ? 'start' : 'end'
-
-            return (
-              <g
-                key={id}
-                style={{ cursor: 'pointer' }}
-                onClick={e => {
-                  e.stopPropagation()
+        {/* Village dots — shown when a region is selected */}
+        {selectedRegion && !selectedVillage && villagesInRegion.map(feature => {
+          const { id, name } = feature.properties
+          const [lon, lat] = feature.geometry.coordinates
+          return (
+            <CircleMarker
+              key={id}
+              center={[lat, lon]}
+              radius={6}
+              pathOptions={{ fillColor: '#C9A84C', fillOpacity: 1, color: '#F5F0E8', weight: 1.5 }}
+              eventHandlers={{
+                click(e) {
+                  L.DomEvent.stopPropagation(e)
                   onSelectVillage({ ...feature.properties, coordinates: feature.geometry.coordinates })
-                }}
-                onMouseEnter={e => { setHovered(id); handleMouseMove(e, name) }}
-                onMouseMove={e => handleMouseMove(e, name)}
-                onMouseLeave={() => { setHovered(null); setTooltip(null) }}
-              >
-                <circle cx={x} cy={y} r={isHoveredV ? 5 : 3.5}
-                  fill={isHoveredV ? '#E8D09A' : '#C9A84C'}
-                  stroke="#F5F0E8" strokeWidth={1.2}
-                  style={{ transition: 'r 0.1s' }}
-                />
-                <text x={labelX} y={y} textAnchor={anchor} dominantBaseline="middle"
-                  fontSize={8} fill="#F5F0E8"
-                  fontFamily="'Crimson Pro', Georgia, serif"
-                  style={{ pointerEvents: 'none' }}
-                >
-                  {name}
-                </text>
-              </g>
-            )
-          })}
+                },
+              }}
+            >
+              <Tooltip className="burg-tooltip" direction="right" offset={[8, 0]} permanent={false}>
+                {name}
+              </Tooltip>
+            </CircleMarker>
+          )
+        })}
 
-          {/* Cru polygons — shown when village selected; grand-cru rendered last (on top) */}
-          {selectedVillage && pathGen && [...crusForVillage]
-            .sort((a, b) => a.properties.level === 'grand-cru' ? 1 : -1)
-            .map(feature => {
-            const { id, name, level, hectares } = feature.properties
-            const isHoveredC = hovered === id
-            const fill = isHoveredC ? CRU_HOVER[level] : CRU_FILL[level]
-            // Compute centroid directly from geographic coordinates to avoid D3 path artifacts
-            const ring = feature.geometry.coordinates[0].slice(0, -1)
-            const proj = ring.map(([lon, lat]) => projection([lon, lat]))
-            const cx = proj.reduce((s, [x]) => s + x, 0) / proj.length
-            const cy = proj.reduce((s, [, y]) => s + y, 0) / proj.length
+        {/* Cru polygons — shown when a village is selected */}
+        {selectedVillage && crusForVillage.length > 0 && (
+          <GeoJSON
+            key={selectedVillage.id}
+            data={{ type: 'FeatureCollection', features: crusForVillage }}
+            style={cruStyle}
+            onEachFeature={onEachCru}
+          />
+        )}
 
-            return (
-              <g
-                key={id}
-                style={{ cursor: 'pointer' }}
-                onClick={e => { e.stopPropagation(); onSelectCru && onSelectCru(feature.properties) }}
-                onMouseEnter={e => { setHovered(id); handleMouseMove(e, `${name} · ${level === 'grand-cru' ? 'Grand Cru' : 'Premier Cru'} · ${hectares} ha`) }}
-                onMouseMove={e => handleMouseMove(e, `${name} · ${level === 'grand-cru' ? 'Grand Cru' : 'Premier Cru'} · ${hectares} ha`)}
-                onMouseLeave={() => { setHovered(null); setTooltip(null) }}
-              >
-                <path
-                  d={feature.geometry.coordinates[0].map(([lon, lat], i) => {
-                    const [x, y] = projection([lon, lat])
-                    return `${i === 0 ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`
-                  }).join('') + 'Z'}
-                  fill={fill}
-                  fillOpacity={0.85}
-                  stroke="#F5F0E8"
-                  strokeWidth={0.4}
-                />
-                {!isNaN(cx) && (
-                  <text
-                    x={cx} y={cy}
-                    textAnchor="middle" dominantBaseline="middle"
-                    fontSize={7 / zoomK} fontWeight={level === 'grand-cru' ? '700' : '400'}
-                    fontFamily="'Crimson Pro', Georgia, serif"
-                    fill="#2C1810"
-                    style={{ pointerEvents: 'none' }}
-                  >
-                    {name}
-                  </text>
-                )}
-              </g>
-            )
-          })}
-        </g>
-      </svg>
+        <MapController
+          selectedRegion={selectedRegion}
+          selectedVillage={selectedVillage}
+          regions={regions}
+          crus={crus}
+        />
+        <BackgroundClick onClearRef={onClearRef} />
+      </MapContainer>
 
-      {tooltip && (
-        <div
-          className="fixed z-20 pointer-events-none bg-[#2C1810] text-[#F5F0E8] px-3 py-1.5 text-xs shadow-lg"
-          style={{ left: tooltip.x + 14, top: tooltip.y - 10 }}
-        >
-          {tooltip.name}
-        </div>
-      )}
-
-      {/* Back hint */}
+      {/* Back buttons */}
       {selectedVillage && (
         <button
           onClick={() => onSelectVillage(null)}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] tracking-widest uppercase text-[#C9A84C] opacity-60 hover:opacity-100 transition-opacity"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors"
         >
           ← Back to {selectedRegion?.name}
         </button>
@@ -318,15 +263,15 @@ export default function BurgundyMap({
       {selectedRegion && !selectedVillage && (
         <button
           onClick={() => onSelectRegion(null)}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] tracking-widest uppercase text-[#C9A84C] opacity-60 hover:opacity-100 transition-opacity"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors"
         >
           ← Back to all regions
         </button>
       )}
 
       {!selectedRegion && (
-        <div className="absolute bottom-2 right-3 text-[9px] tracking-widest uppercase text-[#4A3020] pointer-events-none">
-          Schematic · not to scale
+        <div className="absolute bottom-2 right-3 z-[1000] text-[9px] tracking-widest uppercase text-[#4A3020] pointer-events-none bg-white/60 px-1">
+          © OpenStreetMap · CARTO
         </div>
       )}
     </div>
