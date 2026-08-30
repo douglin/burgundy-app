@@ -1,0 +1,150 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "id": "chambertin", "name": "Chambertin", "villageId": "gevrey-chambertin", "level": "grand-cru", "hectares": 28.5 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.957, 47.210], [4.974, 47.210], [4.974, 47.221], [4.957, 47.221], [4.957, 47.210]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "clos-de-beze", "name": "Clos de Bèze", "villageId": "gevrey-chambertin", "level": "grand-cru", "hectares": 15.4 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.957, 47.221], [4.972, 47.221], [4.972, 47.229], [4.957, 47.229], [4.957, 47.221]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "mazis-chambertin", "name": "Mazis-Chambertin", "villageId": "gevrey-chambertin", "level": "grand-cru", "hectares": 9.1 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.961, 47.229], [4.973, 47.229], [4.973, 47.236], [4.961, 47.236], [4.961, 47.229]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "ruchottes-chambertin", "name": "Ruchottes", "villageId": "gevrey-chambertin", "level": "grand-cru", "hectares": 3.1 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.973, 47.229], [4.979, 47.229], [4.979, 47.235], [4.973, 47.235], [4.973, 47.229]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "laticieres-chambertin", "name": "Latricières", "villageId": "gevrey-chambertin", "level": "grand-cru", "hectares": 7.4 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.948, 47.213], [4.957, 47.213], [4.957, 47.222], [4.948, 47.222], [4.948, 47.213]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "charmes-chambertin", "name": "Charmes-Chambertin", "villageId": "gevrey-chambertin", "level": "grand-cru", "hectares": 30.8 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.952, 47.200], [4.972, 47.200], [4.972, 47.212], [4.952, 47.212], [4.952, 47.200]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "chapelle-chambertin", "name": "Chapelle-Chambertin", "villageId": "gevrey-chambertin", "level": "grand-cru", "hectares": 5.5 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.946, 47.203], [4.955, 47.203], [4.955, 47.210], [4.946, 47.210], [4.946, 47.203]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "gevrey-clos-saint-jacques", "name": "Clos Saint-Jacques", "villageId": "gevrey-chambertin", "level": "premier-cru", "hectares": 6.7 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.985, 47.232], [4.996, 47.232], [4.996, 47.240], [4.985, 47.240], [4.985, 47.232]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "clos-saint-denis", "name": "Clos Saint-Denis", "villageId": "morey-saint-denis", "level": "grand-cru", "hectares": 6.6 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.957, 47.197], [4.966, 47.197], [4.966, 47.204], [4.957, 47.204], [4.957, 47.197]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "clos-de-la-roche", "name": "Clos de la Roche", "villageId": "morey-saint-denis", "level": "grand-cru", "hectares": 16.9 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.950, 47.199], [4.962, 47.199], [4.962, 47.207], [4.950, 47.207], [4.950, 47.199]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "clos-des-lambrays", "name": "Clos des Lambrays", "villageId": "morey-saint-denis", "level": "grand-cru", "hectares": 8.7 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.963, 47.193], [4.972, 47.193], [4.972, 47.200], [4.963, 47.200], [4.963, 47.193]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "clos-de-tart", "name": "Clos de Tart", "villageId": "morey-saint-denis", "level": "grand-cru", "hectares": 7.5 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.958, 47.190], [4.967, 47.190], [4.967, 47.196], [4.958, 47.196], [4.958, 47.190]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "musigny", "name": "Musigny", "villageId": "chambolle-musigny", "level": "grand-cru", "hectares": 10.9 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.954, 47.176], [4.965, 47.176], [4.965, 47.184], [4.954, 47.184], [4.954, 47.176]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "bonnes-mares", "name": "Bonnes Mares", "villageId": "chambolle-musigny", "level": "grand-cru", "hectares": 15.1 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.955, 47.183], [4.968, 47.183], [4.968, 47.191], [4.955, 47.191], [4.955, 47.183]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "chambolle-amoureuses", "name": "Les Amoureuses", "villageId": "chambolle-musigny", "level": "premier-cru", "hectares": 5.4 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.963, 47.172], [4.972, 47.172], [4.972, 47.178], [4.963, 47.178], [4.963, 47.172]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "clos-de-vougeot", "name": "Clos de Vougeot", "villageId": "vougeot", "level": "grand-cru", "hectares": 50.6 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.950, 47.155], [4.973, 47.155], [4.973, 47.174], [4.950, 47.174], [4.950, 47.155]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "romanee-conti", "name": "Romanée-Conti", "villageId": "vosne-romanee", "level": "grand-cru", "hectares": 1.8 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.957, 47.152], [4.961, 47.152], [4.961, 47.156], [4.957, 47.156], [4.957, 47.152]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "la-tache", "name": "La Tâche", "villageId": "vosne-romanee", "level": "grand-cru", "hectares": 6.1 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.952, 47.146], [4.961, 47.146], [4.961, 47.154], [4.952, 47.154], [4.952, 47.146]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "richebourg", "name": "Richebourg", "villageId": "vosne-romanee", "level": "grand-cru", "hectares": 8.0 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.960, 47.154], [4.970, 47.154], [4.970, 47.161], [4.960, 47.161], [4.960, 47.154]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "romanee-saint-vivant", "name": "Romanée-Saint-Vivant", "villageId": "vosne-romanee", "level": "grand-cru", "hectares": 9.4 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.958, 47.147], [4.969, 47.147], [4.969, 47.154], [4.958, 47.154], [4.958, 47.147]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "echezeaux", "name": "Échézeaux", "villageId": "vosne-romanee", "level": "grand-cru", "hectares": 37.7 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.952, 47.161], [4.972, 47.161], [4.972, 47.172], [4.952, 47.172], [4.952, 47.161]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "corton", "name": "Corton", "villageId": "aloxe-corton", "level": "grand-cru", "hectares": 97.0 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.852, 47.068], [4.878, 47.068], [4.880, 47.080], [4.866, 47.086], [4.852, 47.082], [4.852, 47.068]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "corton-charlemagne", "name": "Corton-Charlemagne", "villageId": "aloxe-corton", "level": "grand-cru", "hectares": 53.0 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.840, 47.074], [4.855, 47.074], [4.855, 47.086], [4.840, 47.086], [4.840, 47.074]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "montrachet", "name": "Montrachet", "villageId": "puligny-montrachet", "level": "grand-cru", "hectares": 8.0 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.757, 46.950], [4.766, 46.950], [4.766, 46.956], [4.757, 46.956], [4.757, 46.950]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "chevalier-montrachet", "name": "Chevalier-Montrachet", "villageId": "puligny-montrachet", "level": "grand-cru", "hectares": 7.4 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.755, 46.956], [4.764, 46.956], [4.764, 46.962], [4.755, 46.962], [4.755, 46.956]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "batard-montrachet", "name": "Bâtard-Montrachet", "villageId": "puligny-montrachet", "level": "grand-cru", "hectares": 11.9 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.757, 46.944], [4.767, 46.944], [4.767, 46.950], [4.757, 46.950], [4.757, 46.944]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "puligny-pucelles", "name": "Les Pucelles", "villageId": "puligny-montrachet", "level": "premier-cru", "hectares": 6.8 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.753, 46.960], [4.762, 46.960], [4.762, 46.967], [4.753, 46.967], [4.753, 46.960]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "meursault-perrieres", "name": "Les Perrières", "villageId": "meursault", "level": "premier-cru", "hectares": 13.7 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.765, 46.967], [4.775, 46.967], [4.775, 46.974], [4.765, 46.974], [4.765, 46.967]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "meursault-charmes", "name": "Les Charmes", "villageId": "meursault", "level": "premier-cru", "hectares": 19.2 },
+      "geometry": { "type": "Polygon", "coordinates": [[[4.764, 46.975], [4.775, 46.975], [4.775, 46.983], [4.764, 46.983], [4.764, 46.975]]] }
+    }
+  ]
+}

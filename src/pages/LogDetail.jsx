@@ -101,12 +101,20 @@ export default function LogDetail() {
         </div>
       )}
 
-      <button
-        onClick={handleDelete}
-        className="text-xs tracking-widest uppercase text-[#6B5244] hover:text-red-700 transition-colors"
-      >
-        Delete entry
-      </button>
+      <div className="flex items-center gap-6">
+        <Link
+          to={`/log/${id}/edit`}
+          className="text-xs tracking-widest uppercase text-[#6B5244] hover:text-[#6B0F1A] transition-colors border border-[#D4C5A9] px-4 py-2 hover:border-[#6B0F1A]"
+        >
+          Edit entry
+        </Link>
+        <button
+          onClick={handleDelete}
+          className="text-xs tracking-widest uppercase text-[#6B5244] hover:text-red-700 transition-colors"
+        >
+          Delete entry
+        </button>
+      </div>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import Cellar from './pages/Cellar'
 import Home from './pages/Home'
 import Log from './pages/Log'
 import LogDetail from './pages/LogDetail'
+import LogEdit from './pages/LogEdit'
 import LogNew from './pages/LogNew'
 import ProducerDetail from './pages/ProducerDetail'
 import Producers from './pages/Producers'
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/map" element={<Home />} />
           <Route path="/log" element={<Log />} />
           <Route path="/log/new" element={<LogNew />} />
+          <Route path="/log/:id/edit" element={<LogEdit />} />
           <Route path="/log/:id" element={<LogDetail />} />
           <Route path="/cellar" element={<Cellar />} />
           <Route path="/vintages" element={<Vintages />} />

@@ -4,28 +4,44 @@ import BurgundyMap from '../components/Map/BurgundyMap'
 
 export default function Home() {
   const [selectedRegion, setSelectedRegion] = useState(null)
+  const [selectedVillage, setSelectedVillage] = useState(null)
   const [cardData, setCardData] = useState(null)
   const [cardType, setCardType] = useState(null)
 
   function handleSelectRegion(props) {
     if (!props) {
       setSelectedRegion(null)
+      setSelectedVillage(null)
       setCardData(null)
       setCardType(null)
       return
     }
     setSelectedRegion(props)
+    setSelectedVillage(null)
     setCardData(props)
     setCardType('region')
   }
 
   function handleSelectVillage(props) {
+    if (!props) {
+      setSelectedVillage(null)
+      setCardData(selectedRegion)
+      setCardType('region')
+      return
+    }
+    setSelectedVillage(props)
     setCardData(props)
     setCardType('village')
   }
 
+  function handleSelectCru(props) {
+    setCardData(props)
+    setCardType('cru')
+  }
+
   function handleClose() {
     setSelectedRegion(null)
+    setSelectedVillage(null)
     setCardData(null)
     setCardType(null)
   }
@@ -35,7 +51,7 @@ export default function Home() {
   return (
     <div className="flex h-full">
 
-      {/* Left: intro or empty — hidden when panel is open */}
+      {/* Left intro — hidden when panel is open */}
       {!panelOpen && (
         <div className="hidden lg:flex flex-col justify-center px-10 text-[#EDE6D6] bg-[#2C1810] w-64 flex-shrink-0">
           <p className="text-[#C9A84C] text-[10px] tracking-[0.3em] uppercase mb-3">
@@ -48,7 +64,7 @@ export default function Home() {
             Click a region to explore
           </p>
           <p className="text-sm text-[#9A7B6A] leading-relaxed">
-            Select any region on the map to see its grapes, style, and key producers.
+            Select any region on the map to see its grapes, style, and key producers. Then click a village to see its Grands Crus.
           </p>
           <div className="mt-8 space-y-2">
             {['Chablis','Côte de Nuits','Côte de Beaune','Côte Chalonnaise','Mâconnais'].map(r => (
@@ -75,18 +91,15 @@ export default function Home() {
         )}
       </div>
 
-      {/* Map — fills remaining space */}
+      {/* Map */}
       <div className="flex-1 bg-[#2C1810] overflow-hidden" style={{ minWidth: 0 }}>
         <BurgundyMap
           selectedRegion={selectedRegion}
           onSelectRegion={handleSelectRegion}
+          selectedVillage={selectedVillage}
           onSelectVillage={handleSelectVillage}
+          onSelectCru={handleSelectCru}
         />
-      </div>
-
-      {/* Schematic note */}
-      <div className="absolute bottom-2 right-3 text-[9px] tracking-widest uppercase text-[#4A3020] pointer-events-none">
-        Schematic · not to scale
       </div>
     </div>
   )

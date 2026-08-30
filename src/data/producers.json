@@ -10,6 +10,26 @@
     "website": ""
   },
   {
+    "id": "domaine-fourrier",
+    "name": "Domaine Fourrier",
+    "village": "gevrey-chambertin",
+    "regionId": "cote-de-nuits",
+    "founded": 1955,
+    "style": "Whole-cluster, minimal-intervention approach producing some of Gevrey's most elegant and age-worthy wines.",
+    "keyWines": ["Gevrey-Chambertin Clos Saint-Jacques", "Griotte-Chambertin", "Chambolle-Musigny Les Gruenchers"],
+    "website": ""
+  },
+  {
+    "id": "domaine-trapet",
+    "name": "Domaine Trapet Père et Fils",
+    "village": "gevrey-chambertin",
+    "regionId": "cote-de-nuits",
+    "founded": 1870,
+    "style": "Biodynamic estate producing powerful, terroir-driven reds from Gevrey's greatest vineyards.",
+    "keyWines": ["Chambertin", "Latricières-Chambertin", "Chapelle-Chambertin"],
+    "website": ""
+  },
+  {
     "id": "domaine-leroy",
     "name": "Domaine Leroy",
     "village": "vosne-romanee",
@@ -27,6 +47,26 @@
     "founded": 1869,
     "style": "The most famous estate in Burgundy. Ethereal, complex, and virtually unobtainable.",
     "keyWines": ["Romanée-Conti", "La Tâche", "Richebourg", "Montrachet"],
+    "website": ""
+  },
+  {
+    "id": "domaine-confuron-cotetidot",
+    "name": "Domaine Confuron-Cotetidot",
+    "village": "vosne-romanee",
+    "regionId": "cote-de-nuits",
+    "founded": 1964,
+    "style": "Traditional whole-cluster fermentation produces rich, spiced wines that reward long cellaring.",
+    "keyWines": ["Vosne-Romanée Les Suchots", "Nuits-Saint-Georges Les Boudots", "Échézeaux"],
+    "website": ""
+  },
+  {
+    "id": "domaine-forey",
+    "name": "Domaine Forey Père et Fils",
+    "village": "vosne-romanee",
+    "regionId": "cote-de-nuits",
+    "founded": 1950,
+    "style": "Small family domaine producing pure, elegant Vosne-Romanée. Underrated value among top Côte de Nuits producers.",
+    "keyWines": ["Vosne-Romanée Les Gaudichots", "Vosne-Romanée Les Petits Monts", "Échézeaux"],
     "website": ""
   },
   {
@@ -60,6 +100,26 @@
     "website": ""
   },
   {
+    "id": "domaine-gouges",
+    "name": "Domaine Henri Gouges",
+    "village": "nuits-saint-georges",
+    "regionId": "cote-de-nuits",
+    "founded": 1919,
+    "style": "Pioneer of estate-bottling in Burgundy. Benchmark producer for the firm, structured reds of Nuits-Saint-Georges.",
+    "keyWines": ["Nuits-Saint-Georges Les Saint-Georges", "Nuits-Saint-Georges Les Pruliers", "Nuits-Saint-Georges Clos des Porrets"],
+    "website": ""
+  },
+  {
+    "id": "maison-faiveley",
+    "name": "Maison Faiveley",
+    "village": "nuits-saint-georges",
+    "regionId": "cote-de-nuits",
+    "founded": 1825,
+    "style": "One of Burgundy's largest négociants and domaines. Extensive holdings across the Côte d'Or and particularly strong in Mercurey.",
+    "keyWines": ["Chambertin Clos de Bèze", "Corton Clos des Cortons Faiveley", "Mercurey La Framboisière"],
+    "website": ""
+  },
+  {
     "id": "comtes-lafon",
     "name": "Domaine des Comtes Lafon",
     "village": "meursault",
@@ -67,6 +127,26 @@
     "founded": 1894,
     "style": "The reference producer for Meursault whites — rich, mineral, and age-worthy.",
     "keyWines": ["Meursault Perrières", "Meursault Charmes", "Montrachet"],
+    "website": ""
+  },
+  {
+    "id": "domaine-roulot",
+    "name": "Domaine Roulot",
+    "village": "meursault",
+    "regionId": "cote-de-beaune",
+    "founded": 1930,
+    "style": "Jean-Marc Roulot produces Meursault of extraordinary precision and definition. Among the most sought-after whites in Burgundy.",
+    "keyWines": ["Meursault Perrières", "Meursault Charmes", "Meursault Tessons Clos de Mon Plaisir"],
+    "website": ""
+  },
+  {
+    "id": "domaine-ampeau",
+    "name": "Domaine Robert Ampeau",
+    "village": "meursault",
+    "regionId": "cote-de-beaune",
+    "founded": 1950,
+    "style": "Legendary for releasing wines only when deemed ready to drink — bottles from the 1970s and 80s still available. A unique aged-release philosophy.",
+    "keyWines": ["Meursault Perrières", "Puligny-Montrachet Les Combettes", "Savigny-lès-Beaune Les Lavières"],
     "website": ""
   },
   {
@@ -80,6 +160,26 @@
     "website": ""
   },
   {
+    "id": "domaine-sauzet",
+    "name": "Domaine Etienne Sauzet",
+    "village": "puligny-montrachet",
+    "regionId": "cote-de-beaune",
+    "founded": 1903,
+    "style": "Benchmark Puligny-Montrachet producer. Rich, textured whites with remarkable precision across village, Premier, and Grand Cru levels.",
+    "keyWines": ["Puligny-Montrachet Les Combettes", "Bâtard-Montrachet", "Bienvenues-Bâtard-Montrachet"],
+    "website": ""
+  },
+  {
+    "id": "domaine-de-montille",
+    "name": "Domaine de Montille",
+    "village": "volnay",
+    "regionId": "cote-de-beaune",
+    "founded": 1970,
+    "style": "Hubert de Montille pioneered low-alcohol, structured Pinot Noir. Elegant, age-worthy reds from Volnay and Pommard.",
+    "keyWines": ["Volnay Champans", "Volnay Taillepieds", "Pommard Rugiens"],
+    "website": ""
+  },
+  {
     "id": "domaine-coche-dury",
     "name": "Domaine J-F Coche-Dury",
     "village": "meursault",
@@ -87,6 +187,26 @@
     "founded": 1920,
     "style": "Cult producer of Meursault and Corton-Charlemagne. Wines of unmatched richness and mineral depth — nearly impossible to obtain.",
     "keyWines": ["Corton-Charlemagne", "Meursault Perrières", "Meursault Rougeots"],
+    "website": ""
+  },
+  {
+    "id": "maison-jadot",
+    "name": "Maison Louis Jadot",
+    "village": "beaune",
+    "regionId": "cote-de-beaune",
+    "founded": 1859,
+    "style": "One of Burgundy's most respected négociants. Reliable quality across all levels, with Grand Cru holdings that rival top domaines.",
+    "keyWines": ["Chambertin Clos de Bèze", "Corton-Charlemagne", "Beaune Clos des Ursules"],
+    "website": ""
+  },
+  {
+    "id": "maison-drouhin",
+    "name": "Maison Joseph Drouhin",
+    "village": "beaune",
+    "regionId": "cote-de-beaune",
+    "founded": 1880,
+    "style": "Family-owned négociant known for elegant, terroir-expressive wines. Certified organic, with holdings across all five Burgundy regions.",
+    "keyWines": ["Musigny", "Chambolle-Musigny Les Amoureuses", "Beaune Clos des Mouches"],
     "website": ""
   },
   {
@@ -100,13 +220,33 @@
     "website": ""
   },
   {
-    "id": "domaine-gouges",
-    "name": "Domaine Henri Gouges",
-    "village": "nuits-saint-georges",
-    "regionId": "cote-de-nuits",
-    "founded": 1919,
-    "style": "Pioneer of estate-bottling in Burgundy. Benchmark producer for the firm, structured reds of Nuits-Saint-Georges.",
-    "keyWines": ["Nuits-Saint-Georges Les Saint-Georges", "Nuits-Saint-Georges Les Pruliers", "Nuits-Saint-Georges Clos des Porrets"],
+    "id": "domaine-michel-juillot",
+    "name": "Domaine Michel Juillot",
+    "village": "mercurey",
+    "regionId": "cote-chalonnaise",
+    "founded": 1961,
+    "style": "The benchmark producer in Mercurey — structured, age-worthy reds at a fraction of Côte d'Or prices.",
+    "keyWines": ["Mercurey Clos des Barraults", "Mercurey Les Champs Martins", "Corton-Charlemagne"],
+    "website": ""
+  },
+  {
+    "id": "domaine-valette",
+    "name": "Domaine Valette",
+    "village": "pouilly-fuisse",
+    "regionId": "maconnais",
+    "founded": 1960,
+    "style": "Cult producer of old-vine Pouilly-Fuissé. Naturally fermented, minimal-intervention wines of extraordinary depth and longevity.",
+    "keyWines": ["Pouilly-Fuissé Vieilles Vignes", "Pouilly-Fuissé Clos de Monsieur Noly", "Mâcon-Chaintré"],
+    "website": ""
+  },
+  {
+    "id": "chateau-fuisse",
+    "name": "Château Fuissé",
+    "village": "pouilly-fuisse",
+    "regionId": "maconnais",
+    "founded": 1862,
+    "style": "The most famous estate in Pouilly-Fuissé. Rich, full-bodied whites that can age for a decade or more.",
+    "keyWines": ["Pouilly-Fuissé Le Clos", "Pouilly-Fuissé Vieilles Vignes", "Pouilly-Fuissé Tête de Cru"],
     "website": ""
   }
 ]
