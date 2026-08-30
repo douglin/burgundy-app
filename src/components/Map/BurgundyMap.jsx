@@ -193,9 +193,9 @@ export default function BurgundyMap({
         attributionControl={false}
       >
         <TileLayer
-          url={`https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png?api_key=${import.meta.env.VITE_STADIA_KEY}`}
-          attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          maxZoom={20}
+          url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+          attribution='&copy; <a href="https://www.esri.com/">Esri</a>'
+          maxZoom={16}
         />
 
         {/* Region polygons */}
@@ -270,7 +270,7 @@ export default function BurgundyMap({
 
       {!selectedRegion && (
         <div className="absolute bottom-2 right-3 z-[1000] text-[9px] tracking-widest uppercase text-[#4A3020] pointer-events-none bg-white/60 px-1">
-          © Stadia Maps · OpenStreetMap
+          © Esri
         </div>
       )}
     </div>
