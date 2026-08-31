@@ -8,6 +8,7 @@ const links = [
   { to: '/vintages', label: 'Vintages' },
   { to: '/quiz', label: 'Quiz' },
   { to: '/producers', label: 'Producers' },
+  { to: '/decode', label: 'Decode' },
 ]
 
 function linkCls({ isActive }) {

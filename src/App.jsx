@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import Nav from './components/Nav'
 import Cellar from './pages/Cellar'
+import Decode from './pages/Decode'
 import Home from './pages/Home'
 import Log from './pages/Log'
 import LogDetail from './pages/LogDetail'
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/producers" element={<Producers />} />
           <Route path="/producers/:id" element={<ProducerDetail />} />
+          <Route path="/decode" element={<Decode />} />
         </Routes>
       </main>
     </div>
