@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import appellations from '../data/appellations.json'
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -96,7 +97,7 @@ const SCORE_COLOR = [
 
 // ── Result Card ───────────────────────────────────────────────────────────────
 
-function MatchCard({ match, year, vintageData }) {
+function MatchCard({ match, year, vintageData, onViewOnMap }) {
   const app = appellations.find(a => a.id === match.id)
 
   const vintageRegionId = match.regionId
@@ -223,6 +224,15 @@ function MatchCard({ match, year, vintageData }) {
           </div>
         )}
       </div>
+
+      <div className="px-6 py-4 border-t border-[#D4C5A9]">
+        <button
+          onClick={onViewOnMap}
+          className="w-full border border-[#6B0F1A] text-[#6B0F1A] px-4 py-2 text-[10px] tracking-widest uppercase hover:bg-[#6B0F1A] hover:text-[#F5F0E8] transition-colors"
+        >
+          View on Map
+        </button>
+      </div>
     </div>
   )
 }
@@ -287,6 +297,7 @@ export default function Decode() {
   const [crus, setCrus] = useState(null)
   const [villages, setVillages] = useState(null)
   const [vintageData, setVintageData] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     Promise.all([
@@ -338,7 +349,12 @@ export default function Decode() {
       {/* Results */}
       {hasInput && match && (
         <div className="mb-10">
-          <MatchCard match={match} year={year} vintageData={vintageData} />
+          <MatchCard
+            match={match}
+            year={year}
+            vintageData={vintageData}
+            onViewOnMap={() => navigate('/', { state: { highlight: match } })}
+          />
         </div>
       )}
 

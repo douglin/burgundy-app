@@ -83,6 +83,7 @@ export default function BurgundyMap({
   selectedRegion, onSelectRegion,
   selectedVillage, onSelectVillage,
   onSelectCru,
+  initialHighlight,
 }) {
   const [regions, setRegions] = useState(null)
   const [villages, setVillages] = useState(null)
@@ -92,6 +93,7 @@ export default function BurgundyMap({
   const selectedRegionRef = useRef(selectedRegion)
   const selectedVillageRef = useRef(selectedVillage)
   const onClearRef = useRef(null)
+  const highlightAppliedRef = useRef(false)
 
   useEffect(() => { selectedRegionRef.current = selectedRegion }, [selectedRegion])
   useEffect(() => { selectedVillageRef.current = selectedVillage }, [selectedVillage])
@@ -113,6 +115,32 @@ export default function BurgundyMap({
       setCrus(c)
     })
   }, [])
+
+  // Apply a highlight coming from the Decode page once GeoJSON data is ready
+  useEffect(() => {
+    if (!regions || !villages || !crus) return
+    if (!initialHighlight || highlightAppliedRef.current) return
+    highlightAppliedRef.current = true
+
+    const { level, id, regionId, villageId } = initialHighlight
+
+    const regionFeature = regions.features.find(f => f.properties.id === regionId)
+    if (!regionFeature) return
+    onSelectRegion(regionFeature.properties)
+
+    if (level === 'region') return
+
+    const villageId_ = level === 'village' ? id : villageId
+    const villageFeature = villages.features.find(f => f.properties.id === villageId_)
+    if (!villageFeature) return
+    onSelectVillage({ ...villageFeature.properties, coordinates: villageFeature.geometry.coordinates })
+
+    if (level === 'village') return
+
+    onSelectCru(initialHighlight)
+  // onSelectRegion/Village/Cru are stable callbacks — safe to omit
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [regions, villages, crus])
 
   // Restyle regions imperatively when selection changes
   useEffect(() => {
