@@ -328,5 +328,487 @@
       "The appellation was created in 1971 as an alternative to Beaujolais Blanc",
       "Includes villages as far south as Saint-Amour, bordering Beaujolais"
     ]
+  },
+
+  {
+    "id": "chambertin",
+    "name": "Chambertin",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The 'King of Burgundy.' Massive structure, black fruit, iron, earth, and extraordinary length. Demands 15–25 years to fully open. Among the most profound reds on earth.",
+    "agingRules": "Minimum 18 months in oak. Top producers use 50–100% new oak.",
+    "keyProducers": ["Armand Rousseau", "Leroy", "Trapet Père et Fils", "Joseph Drouhin", "Ponsot"],
+    "facts": [
+      "Napoleon Bonaparte reportedly insisted on Chambertin at every meal and carried it on military campaigns",
+      "The name derives from 'Champ de Bertin' — the field of a medieval peasant named Bertin",
+      "Shares its southern border with Latricières and its northern border with Clos de Bèze"
+    ]
+  },
+  {
+    "id": "chambertin-clos-de-beze",
+    "name": "Chambertin-Clos de Bèze",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "More elegant and perfumed than Chambertin, with silkier tannins. Red and black fruit, violets, spice, great complexity. Can be sold as Chambertin but not vice versa.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Armand Rousseau", "Drouhin", "Faiveley", "Robert Groffier", "Pierre Damoy"],
+    "facts": [
+      "Originally planted by monks from the Abbey of Bèze in the 7th century — Burgundy's oldest documented vineyard",
+      "Uniquely, producers may label it as simply 'Chambertin' — giving them two Grand Cru options",
+      "Often considered the more elegant twin to Chambertin, though debate continues"
+    ]
+  },
+  {
+    "id": "chapelle-chambertin",
+    "name": "Chapelle-Chambertin",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The lightest of the Gevrey Grands Crus. Floral, red fruit, delicate. Approachable earlier than its neighbours but still benefits from 10–15 years of cellaring.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Rossignol-Trapet", "Ponsot", "Pierre Damoy", "Jadot"],
+    "facts": [
+      "Named after a chapel built by the monks of Bèze that once stood at the site",
+      "At 5.5 ha, it is one of the smaller Gevrey Grands Crus",
+      "Shares a border with Clos de Bèze to the north and Griotte to the south"
+    ]
+  },
+  {
+    "id": "charmes-chambertin",
+    "name": "Charmes-Chambertin",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "Plush, seductive, round. Rich dark cherry, chocolate, and spice. The most approachable of the Gevrey Grands Crus in youth, with softer tannins and early allure.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Dujac", "Joseph Roty", "Perrot-Minot", "Ponsot", "Camus"],
+    "facts": [
+      "The largest of the nine Gevrey Grands Crus at ~30 ha — the Mazoyères section may be sold as Charmes",
+      "The name may derive from 'chaume' (fallow land) rather than the French word for charm",
+      "Lower-lying parcels can produce wines of lesser concentration than the hillside plots"
+    ]
+  },
+  {
+    "id": "griotte-chambertin",
+    "name": "Griotte-Chambertin",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The most exotic and spicy of the Gevrey Grands Crus. Wild cherry (griotte), kirsch, floral notes, and a touch of game. Rare and sought-after.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Joseph Drouhin", "Ponsot", "Rossignol-Trapet", "Fourrier"],
+    "facts": [
+      "Named after the griotte cherry — the dominant flavour of wines from this climat",
+      "At only 2.7 ha, production is tiny — fewer than 10,000 bottles per year in total",
+      "Drouhin is the dominant owner with ~1.5 ha of the 2.7 ha total"
+    ]
+  },
+  {
+    "id": "latricieres-chambertin",
+    "name": "Latricières-Chambertin",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "Wild, earthy, and structured. Forest floor, dark fruit, iron mineral. Often tannic in youth — a brooding style that rewards 15+ years of patience.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Leroy", "Trapet Père et Fils", "Faiveley", "Rossignol-Trapet"],
+    "facts": [
+      "Situated directly south of Chambertin and shares its powerful, structured character",
+      "The name may derive from 'latrines' — the rocky, poor soil that was historically used for waste",
+      "Leroy's holding is considered among the finest — they farm biodynamically"
+    ]
+  },
+  {
+    "id": "mazis-chambertin",
+    "name": "Mazis-Chambertin",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "Powerful, firm, and long-lived. Dark fruit, iron, earthy. Tight in youth, it unfolds over 15–20 years into a wine of great complexity and depth.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Harmand-Geoffroy", "Armand Rousseau", "Joseph Faiveley", "Leroy", "Maume"],
+    "facts": [
+      "Divided into two lieu-dits: Mazis-Haut (higher, stonier, finer) and Mazis-Bas (lower, richer)",
+      "Borders Ruchottes to the north — one of the northernmost Gevrey Grands Crus",
+      "Hospices de Beaune owns a famous cuvée from Mazis-Chambertin"
+    ]
+  },
+  {
+    "id": "mazoyeres-chambertin",
+    "name": "Mazoyères-Chambertin",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "Virtually identical in character to Charmes-Chambertin — plush, round, fruit-forward. Most producers choose to label it as Charmes-Chambertin, which is legally permitted.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Perrot-Minot", "Joseph Roty", "Camus"],
+    "facts": [
+      "Producers may legally label their wine as Charmes-Chambertin — few use the Mazoyères name",
+      "Occupies the lower portion of the Charmes-Chambertin climat, closer to the road",
+      "The distinction from Charmes is largely academic — the wines are indistinguishable in style"
+    ]
+  },
+  {
+    "id": "ruchottes-chambertin",
+    "name": "Ruchottes-Chambertin",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The most mineral and austere of the Gevrey Grands Crus. Stony, tight, and tense in youth. Exceptional precision and length after 15–20 years.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Armand Rousseau", "Mugneret-Gibourg", "Frédéric Esmonin"],
+    "facts": [
+      "The highest-elevation Grand Cru in Gevrey-Chambertin — thin, rocky soils",
+      "Rousseau's 'Clos des Ruchottes' is effectively a monopole of the best parcels",
+      "At 3.4 ha, total production rarely exceeds 12,000 bottles"
+    ]
+  },
+  {
+    "id": "bonnes-mares",
+    "name": "Bonnes-Mares",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The powerful Grand Cru of Chambolle-Musigny. Structured and rich, with dark fruit, earth, and animal notes — the antithesis of the village's delicate style. Ages 20+ years.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Georges Roumier", "Comte Georges de Vogüé", "Drouhin-Laroze", "Dujac"],
+    "facts": [
+      "Straddles two communes: 13.7 ha in Chambolle-Musigny and 1.5 ha in Morey-Saint-Denis",
+      "The two soil types (red clay and white limestone) produce noticeably different wines within the same GC",
+      "Roumier's Bonnes-Mares is one of the most sought-after wines in Burgundy"
+    ]
+  },
+  {
+    "id": "musigny",
+    "name": "Musigny",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay"] },
+    "style": "The most feminine Grand Cru of Burgundy. Exquisite perfume — violets, rose, red berries — wrapped in the finest silky tannins. Hauntingly complex, ages 20–30 years.",
+    "agingRules": "Minimum 18 months in oak. De Vogüé uses 100% new oak.",
+    "keyProducers": ["Comte Georges de Vogüé", "Georges Roumier", "Leroy", "Joseph Drouhin", "Jadot"],
+    "facts": [
+      "De Vogüé owns 7 of the 10.8 hectares — the benchmark for this appellation",
+      "One of the few Grand Crus to produce a tiny amount of white wine (Musigny Blanc from de Vogüé)",
+      "The name 'Musigny' may derive from 'muscs' — musky or perfumed"
+    ]
+  },
+  {
+    "id": "clos-saint-denis",
+    "name": "Clos Saint-Denis",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The most delicate and feminine of the Morey Grands Crus. Floral, red fruit, silky. Less powerful than Clos de la Roche but highly refined. Best after 12–18 years.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Ponsot", "Dujac", "Jadot", "Bertagna", "Moillard"],
+    "facts": [
+      "Morey-Saint-Denis added this Grand Cru's name to its own in 1927 — giving the village its current name",
+      "The smallest of the four Morey Grands Crus at 6.6 ha",
+      "Named after the priory of Saint-Denis de Vergy that owned the vineyard in the Middle Ages"
+    ]
+  },
+  {
+    "id": "clos-de-la-roche",
+    "name": "Clos de la Roche",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The most powerful Grand Cru of Morey-Saint-Denis. Dense, structured, earthy, with dark fruit and truffle. A 'Chambertin-like' wine that demands 15–25 years.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Ponsot", "Dujac", "Hubert Lignier", "Rousseau", "Leroy"],
+    "facts": [
+      "The largest Morey Grand Cru at 17 ha — Ponsot's Cuvée Vieilles Vignes is legendary",
+      "Rocky, stonier soils than the Chambolle Grands Crus — responsible for its structured character",
+      "Named after a rocky outcrop within the vineyard"
+    ]
+  },
+  {
+    "id": "clos-des-lambrays",
+    "name": "Clos des Lambrays",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "Elegant, precise, and perfumed. Red fruit, floral notes, fine tannins. Lighter in body than Clos de la Roche, closer in style to the Chambolle Grands Crus.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Domaine des Lambrays"],
+    "facts": [
+      "Effectively a monopole — Domaine des Lambrays owns virtually all 8.8 hectares",
+      "Acquired by LVMH (Moët Hennessy) in 2014 for a reported €101 million",
+      "Promoted to Grand Cru status only in 1981 — one of the last additions to the GC hierarchy"
+    ]
+  },
+  {
+    "id": "clos-de-tart",
+    "name": "Clos de Tart",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "Structured, concentrated, and silky. Red and black cherry, spice, earthy depth. The walled monopole produces wines of great consistency and terroir expression.",
+    "agingRules": "Minimum 18 months in oak. Winemaker Jacques Devauges uses 30–50% new oak.",
+    "keyProducers": ["Domaine du Clos de Tart"],
+    "facts": [
+      "A perfect monopole — the entire 7.5 ha is owned by Artémis Domaines (François Pinault)",
+      "The vineyard has been a single holding since the 12th century — owned by Cistercian nuns from 1141",
+      "Sold for an estimated €200 million to Pinault in 2017 — the most expensive vineyard sale in history"
+    ]
+  },
+  {
+    "id": "clos-de-vougeot",
+    "name": "Clos de Vougeot",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "Varies enormously by producer and parcel. Top parcels (upper slope) produce profound, structured, complex reds. Lower parcels can be rich but looser. Quality is entirely producer-dependent.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Leroy", "Méo-Camuzet", "Armand Rousseau", "Drouhin", "Château de la Tour"],
+    "facts": [
+      "With 80+ different owners, Clos de Vougeot is the ultimate proof that terroir alone doesn't guarantee quality",
+      "The walled vineyard (clos) was assembled by Cistercian monks from the Abbey of Cîteaux between 1150–1336",
+      "The Château within the clos is home to the Confrérie des Chevaliers du Tastevin — Burgundy's most famous wine brotherhood"
+    ]
+  },
+  {
+    "id": "echezeaux",
+    "name": "Echezeaux",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The 'approachable' Grand Cru of Flagey. Lighter and more supple than its neighbour Grands-Echézeaux. Perfumed, red fruit, spice. Ready earlier — 10 to 15 years.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Domaine de la Romanée-Conti", "Emmanuel Rouget", "Leroy", "Mongeard-Mugneret", "Engel"],
+    "facts": [
+      "At nearly 38 ha, Echézeaux is one of the largest Burgundy Grand Crus — divided into 11 individual lieux-dits",
+      "The quality varies dramatically between the top parcels (near Grands-Echézeaux) and those near the road",
+      "DRC produces a celebrated Echézeaux that is a fraction of the price of their other Grand Crus"
+    ]
+  },
+  {
+    "id": "grands-echezeaux",
+    "name": "Grands-Echézeaux",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "More powerful and structured than Echézeaux. Dark fruit, spice, floral notes, great depth. A bridge between the elegance of Vosne and the power of Clos de Vougeot. Needs 15+ years.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Domaine de la Romanée-Conti", "Engel", "Lamarche", "Mongeard-Mugneret"],
+    "facts": [
+      "Despite the name, 'Grands-Echézeaux' is not a superior version of Echézeaux — it is a separate, distinct climat",
+      "Directly adjacent to Clos de Vougeot — the soils and exposures are very similar",
+      "DRC's version is considered the benchmark — one of the more 'accessible' DRC Grand Crus"
+    ]
+  },
+  {
+    "id": "la-grande-rue",
+    "name": "La Grande Rue",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "Sandwiched between La Tâche and Romanée-Conti, sharing the silky elegance of its famous neighbours. Perfumed, precise, red fruit, mineral depth. Best after 15 years.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Domaine Lamarche"],
+    "facts": [
+      "A monopole — François Lamarche owns all 1.65 ha",
+      "Promoted to Grand Cru status in 1992 — it was previously Premier Cru",
+      "Literally runs between La Romanée-Conti and La Tâche, making it arguably the most uniquely-situated Grand Cru"
+    ]
+  },
+  {
+    "id": "la-romanee",
+    "name": "La Romanée",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "Delicate, precise, and ethereal. Red fruit, rose petal, spice, and extraordinary mineral tension. Tiny production makes this one of Burgundy's rarest wines.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Domaine du Comte Liger-Belair"],
+    "facts": [
+      "At 0.85 ha, La Romanée is the smallest Grand Cru appellation in all of France",
+      "A monopole owned entirely by the Liger-Belair family since the 19th century",
+      "Fewer than 3,000 bottles are produced in a typical vintage"
+    ]
+  },
+  {
+    "id": "la-tache",
+    "name": "La Tâche",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "Haunting, exotic, and complex. Spice, dark cherry, violet, and a characteristic iron-mineral finish. More structured than Romanée-Conti but equally profound. Peaks at 20–30 years.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Domaine de la Romanée-Conti"],
+    "facts": [
+      "A DRC monopole — one of the few wholly-owned Grand Crus in Vosne-Romanée",
+      "At 6 ha, it is larger than Romanée-Conti and DRC's most abundantly produced Grand Cru",
+      "Prices rival Romanée-Conti — typically $3,000–$8,000 per bottle at retail"
+    ]
+  },
+  {
+    "id": "richebourg",
+    "name": "Richebourg",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The most opulent and voluptuous Grand Cru of Vosne. Rich, velvety, perfumed. Cassis, roses, spice, and a majestic, lingering finish. Ages magnificently over 20–30 years.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Domaine de la Romanée-Conti", "Leroy", "Méo-Camuzet", "Gros Frère et Soeur"],
+    "facts": [
+      "At 8 ha, it is the largest of the six DRC Grand Cru monopoles and near-monopoles in Vosne",
+      "The name 'Richebourg' ('rich hill') reflects the clay-rich soils that give wines their lush character",
+      "Leroy's Richebourg is considered by many to rival DRC's version"
+    ]
+  },
+  {
+    "id": "romanee-conti",
+    "name": "Romanée-Conti",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The greatest wine in the world, according to many. Incomprehensible complexity — spice, fruit, earth, exotic perfume, and a finish that lasts minutes. Requires 20–40 years.",
+    "agingRules": "Minimum 18 months in oak. DRC uses 100% new oak.",
+    "keyProducers": ["Domaine de la Romanée-Conti"],
+    "facts": [
+      "A DRC monopole — one of the rarest and most expensive wines on earth (~5,000–6,000 bottles per year)",
+      "A single bottle regularly fetches $15,000–$50,000+ at auction; the 1945 vintage sold for $558,000",
+      "The Prince of Conti purchased the vineyard in 1760 and lent it his name — it was nationalised during the Revolution but returned to private ownership"
+    ]
+  },
+  {
+    "id": "romanee-saint-vivant",
+    "name": "Romanée-Saint-Vivant",
+    "regionId": "cote-de-nuits",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": [] },
+    "style": "The most delicate and ethereal of the six Vosne Grands Crus. Lighter in colour, floral, with red fruit and extraordinary mineral precision. A feminine counterpoint to Richebourg.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Domaine de la Romanée-Conti", "Leroy", "Hudelot-Noëllat", "Sylvain Cathiard"],
+    "facts": [
+      "Originally owned by the abbey of Saint-Vivant de Vergy — one of the oldest monastic vineyards in Burgundy",
+      "DRC controls 5.3 of the 9.4 ha; the remainder is split among several small producers",
+      "Often described as 'the most Burgundian of all Burgundies' for its translucent, ethereal style"
+    ]
+  },
+
+  {
+    "id": "corton",
+    "name": "Corton",
+    "regionId": "cote-de-beaune",
+    "level": "grand-cru",
+    "grapes": { "red": ["Pinot Noir"], "white": ["Chardonnay", "Pinot Gris"] },
+    "style": "The only red Grand Cru of the Côte de Beaune. Powerful, structured, earthy, with dark fruit and a firm mineral backbone. Can be austere in youth; opens magnificently after 15–20 years.",
+    "agingRules": "Minimum 18 months in oak.",
+    "keyProducers": ["Bonneau du Martray", "Chandon de Briailles", "Tollot-Beaut", "Louis Jadot", "Leroy"],
+    "facts": [
+      "The Corton hill is shared by three communes: Aloxe-Corton, Ladoix-Serrigny, and Pernand-Vergelesses",
+      "Wines may be labelled 'Corton' or 'Corton + lieu-dit' (e.g. Corton Clos du Roi, Corton Les Bressandes)",
+      "The hill produces both red (Corton) and white (Corton-Charlemagne) Grand Crus — unique in Burgundy"
+    ]
+  },
+  {
+    "id": "corton-charlemagne",
+    "name": "Corton-Charlemagne",
+    "regionId": "cote-de-beaune",
+    "level": "grand-cru",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "Majestic white Burgundy. Powerful, mineral, and long-lived. Toasted almond, citrus, white flowers, and a stony, almost electric finish. Rivalled only by Montrachet among Burgundy whites.",
+    "agingRules": "Minimum 12 months in oak; top producers 18+ months.",
+    "keyProducers": ["Bonneau du Martray", "Coche-Dury", "Leroy", "Louis Jadot", "Louis Latour"],
+    "facts": [
+      "Charlemagne (742–814) owned vines on this hill and is said to have introduced white grapes",
+      "Covers the upper western and southern flanks of the Corton hill — the white wine zone",
+      "Bonneau du Martray, with 9.5 ha, is the largest single owner and the benchmark producer"
+    ]
+  },
+  {
+    "id": "charlemagne",
+    "name": "Charlemagne",
+    "regionId": "cote-de-beaune",
+    "level": "grand-cru",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "Essentially identical to Corton-Charlemagne in style — powerful, mineral, complex white Burgundy. Almost never seen on labels as producers overwhelmingly prefer the more prestigious 'Corton-Charlemagne' designation.",
+    "agingRules": "Minimum 12 months in oak.",
+    "keyProducers": ["Bonneau du Martray"],
+    "facts": [
+      "The 'Charlemagne' appellation is almost never used — producers may label their wine as 'Corton-Charlemagne' instead",
+      "Covers the Pernand-Vergelesses portion of the Grand Cru hill",
+      "Named after Emperor Charlemagne, who supposedly kept vines here in the 8th century"
+    ]
+  },
+  {
+    "id": "montrachet",
+    "name": "Montrachet",
+    "regionId": "cote-de-beaune",
+    "level": "grand-cru",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "The greatest dry white wine on earth. Extraordinary richness, minerality, and complexity. Honey, white flowers, hazelnut, and a finish of breathtaking length. Must be aged 10–20 years.",
+    "agingRules": "Minimum 12 months in oak; typically 18+ months for Grand Cru.",
+    "keyProducers": ["Domaine de la Romanée-Conti", "Leflaive", "Bouchard Père et Fils", "Marquis de Laguiche (Drouhin)", "Baron Thénard"],
+    "facts": [
+      "Alexandre Dumas decreed it should be drunk 'kneeling, with head bowed and in a spirit of devotion'",
+      "Straddles the boundary of Puligny-Montrachet (southern part) and Chassagne-Montrachet (northern part)",
+      "DRC acquired 0.67 ha in 2018 — the most recent major transaction for this appellation"
+    ]
+  },
+  {
+    "id": "chevalier-montrachet",
+    "name": "Chevalier-Montrachet",
+    "regionId": "cote-de-beaune",
+    "level": "grand-cru",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "Higher, lighter, and more mineral than Montrachet. Electric, tense, and precise — citrus, white flower, and a steely, almost saline finish. Less opulent but arguably more intellectual.",
+    "agingRules": "Minimum 12 months in oak; typically 18 months.",
+    "keyProducers": ["Leflaive", "Bouchard Père et Fils", "Jadot", "Carillon", "Chartron"],
+    "facts": [
+      "Sits directly above Montrachet on the slope — thinner, more limestone-rich soils produce a leaner, more austere style",
+      "Leflaive is the dominant owner with ~2 ha of the 7.5 ha total",
+      "Often more consistent than Montrachet across difficult vintages due to its better drainage"
+    ]
+  },
+  {
+    "id": "batard-montrachet",
+    "name": "Bâtard-Montrachet",
+    "regionId": "cote-de-beaune",
+    "level": "grand-cru",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "Richer and more opulent than Chevalier, but less so than Montrachet. Hazelnut, cream, stone fruit, and a broad, generous finish. The most accessible of the Montrachet Grands Crus.",
+    "agingRules": "Minimum 12 months in oak; typically 18 months.",
+    "keyProducers": ["Leflaive", "Ramonet", "Sauzet", "Jean-Noël Gagnard", "Blain-Gagnard"],
+    "facts": [
+      "Straddles Puligny-Montrachet and Chassagne-Montrachet — the boundary runs through the middle",
+      "At 11.9 ha, it is the largest of the Montrachet Grands Crus",
+      "The name 'Bâtard' (bastard) may refer to an illegitimate son of a medieval lord who inherited these vines"
+    ]
+  },
+  {
+    "id": "bienvenues-batard-montrachet",
+    "name": "Bienvenues-Bâtard-Montrachet",
+    "regionId": "cote-de-beaune",
+    "level": "grand-cru",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "Lighter and more floral than Bâtard-Montrachet. Fresh citrus, almond, and white flowers with a fine mineral thread. Approachable earlier, typically at its best 8–15 years.",
+    "agingRules": "Minimum 12 months in oak.",
+    "keyProducers": ["Leflaive", "Ramonet", "Carillon", "Sauzet"],
+    "facts": [
+      "Lies entirely within Puligny-Montrachet — there is no Chassagne component",
+      "The whimsical name translates as 'Welcome to Bâtard-Montrachet'",
+      "At 3.7 ha, production is limited — often overshadowed by its larger neighbour Bâtard"
+    ]
+  },
+  {
+    "id": "criots-batard-montrachet",
+    "name": "Criots-Bâtard-Montrachet",
+    "regionId": "cote-de-beaune",
+    "level": "grand-cru",
+    "grapes": { "red": [], "white": ["Chardonnay"] },
+    "style": "Rich and creamy with ripe stone fruit and hazelnut. The most Chassagne-like of the Montrachet Grands Crus — broader and more textural than Chevalier. Drink at 8–15 years.",
+    "agingRules": "Minimum 12 months in oak.",
+    "keyProducers": ["Blain-Gagnard", "Fontaine-Gagnard", "Roger Belland", "Joseph Drouhin"],
+    "facts": [
+      "The smallest of the Montrachet Grand Crus at 1.57 ha — and lies entirely in Chassagne-Montrachet",
+      "Fewer than 6,000 bottles are produced annually across all producers",
+      "The name 'Criots' derives from the local dialect word for stony, cried-out (exhausted) soil"
+    ]
   }
 ]

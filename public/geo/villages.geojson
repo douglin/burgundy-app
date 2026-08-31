@@ -28,6 +28,11 @@
     },
     {
       "type": "Feature",
+      "properties": { "id": "flagey-echezeaux", "name": "Flagey-Echézeaux", "regionId": "cote-de-nuits", "level": "village" },
+      "geometry": { "type": "Point", "coordinates": [4.9514, 47.17055] }
+    },
+    {
+      "type": "Feature",
       "properties": { "id": "vosne-romanee", "name": "Vosne-Romanée", "regionId": "cote-de-nuits", "level": "village" },
       "geometry": { "type": "Point", "coordinates": [4.959, 47.151] }
     },
