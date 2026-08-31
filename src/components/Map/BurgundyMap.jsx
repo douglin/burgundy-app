@@ -214,8 +214,8 @@ export default function BurgundyMap({
   return (
     <div className="relative w-full h-full">
       <MapContainer
-        bounds={[[46.05, 3.55], [47.98, 5.10]]}
-        boundsOptions={{ padding: [20, 20] }}
+        center={[47.0, 4.35]}
+        zoom={8}
         style={{ width: '100%', height: '100%' }}
         zoomControl={true}
         attributionControl={false}
