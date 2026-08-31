@@ -42,13 +42,17 @@ function regionStyle(id, selectedRegion) {
 
 function MapController({ selectedRegion, selectedVillage, regions, crus }) {
   const map = useMap()
+  const mounted = useRef(false)
 
   useEffect(() => {
     if (!regions) return
     if (!selectedRegion) {
+      // Skip the fly-back on initial mount — MapContainer's center+zoom handles it
+      if (!mounted.current) { mounted.current = true; return }
       map.flyToBounds(L.geoJSON(regions).getBounds().pad(0.05), { duration: 0.55 })
       return
     }
+    mounted.current = true
     if (selectedVillage) {
       const vc = crus?.features.filter(f => f.properties.villageId === selectedVillage.id) || []
       if (vc.length) {
