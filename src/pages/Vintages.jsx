@@ -1,8 +1,4 @@
-import { useState } from 'react'
-import vintageData from '../data/vintages.json'
-
-const years = Object.keys(vintageData.years).sort((a, b) => b - a)
-const regions = vintageData.regions
+import { useEffect, useState } from 'react'
 
 function cellStyle(score) {
   const styles = [
@@ -17,7 +13,17 @@ function cellStyle(score) {
 }
 
 export default function Vintages() {
+  const [vintageData, setVintageData] = useState(null)
   const [tooltip, setTooltip] = useState(null)
+
+  useEffect(() => {
+    fetch('/data/vintages.json').then(r => r.json()).then(setVintageData)
+  }, [])
+
+  if (!vintageData) return <div className="max-w-3xl mx-auto px-6 py-12 text-[#6B5244]">Loading…</div>
+
+  const years = Object.keys(vintageData.years).sort((a, b) => b - a)
+  const regions = vintageData.regions
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
