@@ -2,6 +2,13 @@ import { Link } from 'react-router-dom'
 import appellations from '../../data/appellations.json'
 import producers from '../../data/producers.json'
 
+const LEVEL_CONTEXT = {
+  'grand-cru':   "Burgundy's highest classification. The vineyard name appears alone on the label — no village qualifier.",
+  'premier-cru': 'Second highest level. Label shows village name first, then the climat name.',
+  'village':     'The village name is the appellation. One step below Premier Cru.',
+  'region':      'Broadest category — the entry point to Burgundy.',
+}
+
 export default function FactCard({ selection, type, onClose }) {
   if (!selection) return null
 
@@ -32,6 +39,9 @@ export default function FactCard({ selection, type, onClose }) {
               >
                 {selection.name}
               </h2>
+              <p className="text-xs text-[#6B5244] mt-1 leading-snug">
+                {LEVEL_CONTEXT[selection.level]}
+              </p>
             </div>
             <button onClick={onClose} className="text-[#6B5244] hover:text-[#6B0F1A] text-lg leading-none mt-0.5 ml-4 flex-shrink-0" aria-label="Close">×</button>
           </div>
@@ -96,7 +106,12 @@ export default function FactCard({ selection, type, onClose }) {
             </div>
           )}
         </div>
-        <div className="px-6 py-4 border-t border-[#D4C5A9]">
+        <div className="px-6 py-4 border-t border-[#D4C5A9] space-y-2">
+          <div className="flex gap-3 text-[10px] tracking-widest uppercase text-[#6B5244]">
+            <Link to="/learn/classification" className="hover:text-[#6B0F1A] transition-colors">Classification ↗</Link>
+            <span className="opacity-40">·</span>
+            <Link to="/learn/terroir" className="hover:text-[#6B0F1A] transition-colors">Terroir ↗</Link>
+          </div>
           <Link
             to="/log/new"
             className="block w-full text-center border border-[#6B0F1A] text-[#6B0F1A] px-4 py-2 text-[10px] tracking-widest uppercase hover:bg-[#6B0F1A] hover:text-[#F5F0E8] transition-colors"
@@ -123,6 +138,9 @@ export default function FactCard({ selection, type, onClose }) {
             >
               {selection.name}
             </h2>
+            <p className="text-xs text-[#6B5244] mt-1 leading-snug">
+              {LEVEL_CONTEXT[type === 'region' ? 'region' : 'village']}
+            </p>
           </div>
           <button
             onClick={onClose}
@@ -156,6 +174,14 @@ export default function FactCard({ selection, type, onClose }) {
             <p className="text-[#2C1810] text-sm leading-relaxed italic">
               {appellation?.style || selection.style}
             </p>
+          </div>
+        )}
+
+        {/* Terroir (village level) */}
+        {type !== 'region' && appellation?.terroir && (
+          <div>
+            <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Terroir</p>
+            <p className="text-[#2C1810] text-sm leading-relaxed">{appellation.terroir}</p>
           </div>
         )}
 
@@ -230,7 +256,12 @@ export default function FactCard({ selection, type, onClose }) {
       </div>
 
       {/* Footer CTA */}
-      <div className="px-6 py-4 border-t border-[#D4C5A9]">
+      <div className="px-6 py-4 border-t border-[#D4C5A9] space-y-2">
+        <div className="flex gap-3 text-[10px] tracking-widest uppercase text-[#6B5244]">
+          <Link to="/learn/classification" className="hover:text-[#6B0F1A] transition-colors">Classification ↗</Link>
+          <span className="opacity-40">·</span>
+          <Link to="/learn/terroir" className="hover:text-[#6B0F1A] transition-colors">Terroir ↗</Link>
+        </div>
         <Link
           to={`/log/new${appellation ? `?appellation=${appellation.id}` : ''}`}
           className="block w-full text-center border border-[#6B0F1A] text-[#6B0F1A] px-4 py-2 text-[10px] tracking-widest uppercase hover:bg-[#6B0F1A] hover:text-[#F5F0E8] transition-colors"
