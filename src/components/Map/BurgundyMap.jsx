@@ -205,17 +205,13 @@ export default function BurgundyMap({
     }
   }
 
-  const initialBounds = useMemo(() => {
-    // Burgundy corridor + Chablis
-    return L.latLngBounds([[46.20, 3.60], [47.95, 5.10]])
-  }, [])
-
   if (!regions) return <div className="w-full h-full bg-[#2C1810]" />
 
   return (
     <div className="relative w-full h-full">
       <MapContainer
-        bounds={initialBounds}
+        center={[47.0, 4.35]}
+        zoom={8}
         style={{ width: '100%', height: '100%' }}
         zoomControl={true}
         attributionControl={false}

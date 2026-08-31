@@ -616,7 +616,8 @@
       "Napoleon Bonaparte reportedly insisted on Chambertin at every meal and carried it on military campaigns",
       "The name derives from 'Champ de Bertin' — the field of a medieval peasant named Bertin",
       "Shares its southern border with Latricières and its northern border with Clos de Bèze"
-    ]
+    ],
+    "terroir": "Sits at the optimal mid-slope position on the Gevrey hill, with iron-enriched limestone-clay soil over fragmented bedrock. The east-facing exposure, natural drainage, and unique soil chemistry have made this strip of hillside the benchmark for Côte de Nuits Pinot Noir for centuries."
   },
   {
     "id": "chambertin-clos-de-beze",
@@ -642,7 +643,8 @@
       "Originally planted by monks from the Abbey of Bèze in the 7th century — Burgundy's oldest documented vineyard",
       "Uniquely, producers may label it as simply 'Chambertin' — giving them two Grand Cru options",
       "Often considered the more elegant twin to Chambertin, though debate continues"
-    ]
+    ],
+    "terroir": "Directly adjacent to Chambertin but with less iron and slightly purer limestone in the soil, sitting fractionally higher on the slope. The enclosed clos was originally planted by Benedictine monks in the 7th century — one of the oldest continuously cultivated vineyards in Burgundy."
   },
   {
     "id": "chapelle-chambertin",
@@ -667,7 +669,8 @@
       "Named after a chapel built by the monks of Bèze that once stood at the site",
       "At 5.5 ha, it is one of the smaller Gevrey Grands Crus",
       "Shares a border with Clos de Bèze to the north and Griotte to the south"
-    ]
+    ],
+    "terroir": "A small climat south of Clos de Bèze, sitting slightly lower on the slope with more clay than its northern neighbours. The heavier soil produces fuller, more approachable wines. Named for a chapel that once stood at the vineyard's edge."
   },
   {
     "id": "charmes-chambertin",
@@ -693,7 +696,8 @@
       "The largest of the nine Gevrey Grands Crus at ~30 ha — the Mazoyères section may be sold as Charmes",
       "The name may derive from 'chaume' (fallow land) rather than the French word for charm",
       "Lower-lying parcels can produce wines of lesser concentration than the hillside plots"
-    ]
+    ],
+    "terroir": "The largest Grand Cru in Gevrey (~31 ha), encompassing two distinct soil types: the upper section (historically called Mazoyères) has more clay and produces rounder wines; the lower Charmes portion is more limestone-dominant and finer. This internal variation partly explains why quality varies more here than in the smaller Chambertin climates."
   },
   {
     "id": "griotte-chambertin",
@@ -718,7 +722,8 @@
       "Named after the griotte cherry — the dominant flavour of wines from this climat",
       "At only 2.7 ha, production is tiny — fewer than 10,000 bottles per year in total",
       "Drouhin is the dominant owner with ~1.5 ha of the 2.7 ha total"
-    ]
+    ],
+    "terroir": "The smallest Grand Cru in Gevrey at ~2.7 ha, wedged between Chapelle and Clos de Bèze at mid-slope. Thin limestone soils with excellent natural drainage produce wines of surprising intensity. The name likely refers to the griotte cherry — a fruit grown here before Pinot Noir dominated."
   },
   {
     "id": "latricieres-chambertin",
@@ -743,7 +748,8 @@
       "Situated directly south of Chambertin and shares its powerful, structured character",
       "The name may derive from 'latrines' — the rocky, poor soil that was historically used for waste",
       "Leroy's holding is considered among the finest — they farm biodynamically"
-    ]
+    ],
+    "terroir": "Sits south of Chambertin on heavier soils with larger stones and more clay, giving wines more body and a rougher-textured youth. Often described as the most rustic of the Chambertin climates — powerful, but needing more time than its famous northern neighbour."
   },
   {
     "id": "mazis-chambertin",
@@ -769,7 +775,8 @@
       "Divided into two lieu-dits: Mazis-Haut (higher, stonier, finer) and Mazis-Bas (lower, richer)",
       "Borders Ruchottes to the north — one of the northernmost Gevrey Grands Crus",
       "Hospices de Beaune owns a famous cuvée from Mazis-Chambertin"
-    ]
+    ],
+    "terroir": "Divided into two sub-zones: Mazis-Haut (upper slope, thinner limestone, finer wines) and Mazis-Bas (lower, more clay, fuller). The upper section produces wines closest in character to Clos de Bèze. The contrast between upper and lower illustrates how dramatically a few metres of elevation can shift the terroir."
   },
   {
     "id": "mazoyeres-chambertin",
@@ -793,7 +800,8 @@
       "Producers may legally label their wine as Charmes-Chambertin — few use the Mazoyères name",
       "Occupies the lower portion of the Charmes-Chambertin climat, closer to the road",
       "The distinction from Charmes is largely academic — the wines are indistinguishable in style"
-    ]
+    ],
+    "terroir": "Occupies the same general zone as the upper portion of Charmes-Chambertin — producers may legally use either name. The soils here have more clay than the Chambertin climates to the north, giving a broader, rounder style. The distinction from Charmes is largely administrative rather than geologically significant."
   },
   {
     "id": "ruchottes-chambertin",
@@ -817,7 +825,8 @@
       "The highest-elevation Grand Cru in Gevrey-Chambertin — thin, rocky soils",
       "Rousseau's 'Clos des Ruchottes' is effectively a monopole of the best parcels",
       "At 3.4 ha, total production rarely exceeds 12,000 bottles"
-    ]
+    ],
+    "terroir": "The highest-altitude Grand Cru in Gevrey at ~3.1 ha, close to the forest edge at the top of the slope. Thin, rocky soils with more limestone than clay force low yields and produce structured, mineral wines that are among the slowest to open in the village."
   },
   {
     "id": "bonnes-mares",
@@ -842,7 +851,8 @@
       "Straddles two communes: 13.7 ha in Chambolle-Musigny and 1.5 ha in Morey-Saint-Denis",
       "The two soil types (red clay and white limestone) produce noticeably different wines within the same GC",
       "Roumier's Bonnes-Mares is one of the most sought-after wines in Burgundy"
-    ]
+    ],
+    "terroir": "Straddles two communes: a small southern portion (~1.5 ha) in Morey with heavier clay soils, and the main ~13.5 ha in Chambolle with thinner, limestone-dominant soil. The Chambolle section produces finer, more perfumed wine; the Morey section is fuller and more structured — one of the clearest illustrations of how soil composition shapes character across a single Grand Cru."
   },
   {
     "id": "musigny",
@@ -870,7 +880,8 @@
       "De Vogüé owns 7 of the 10.8 hectares — the benchmark for this appellation",
       "One of the few Grand Crus to produce a tiny amount of white wine (Musigny Blanc from de Vogüé)",
       "The name 'Musigny' may derive from 'muscs' — musky or perfumed"
-    ]
+    ],
+    "terroir": "The crown jewel of Chambolle. Exceptionally thin, limestone-dominant soil with very little clay — possibly the purest expression of limestone-driven Pinot Noir in Burgundy. A tiny portion (0.65 ha) of old Chardonnay vines produces one of the rarest whites in the world."
   },
   {
     "id": "clos-saint-denis",
@@ -896,7 +907,8 @@
       "Morey-Saint-Denis added this Grand Cru's name to its own in 1927 — giving the village its current name",
       "The smallest of the four Morey Grands Crus at 6.6 ha",
       "Named after the priory of Saint-Denis de Vergy that owned the vineyard in the Middle Ages"
-    ]
+    ],
+    "terroir": "The village is named after this Grand Cru (~6.6 ha). Thinner, more stony soils on a steeper slope than Clos de la Roche produce more elegant and perfumed wines — closer in character to Chambolle than the other Morey Grands Crus."
   },
   {
     "id": "clos-de-la-roche",
@@ -922,7 +934,8 @@
       "The largest Morey Grand Cru at 17 ha — Ponsot's Cuvée Vieilles Vignes is legendary",
       "Rocky, stonier soils than the Chambolle Grands Crus — responsible for its structured character",
       "Named after a rocky outcrop within the vineyard"
-    ]
+    ],
+    "terroir": "The largest Grand Cru in Morey (~16.9 ha) with rocky, thin limestone soils — the limestone bedrock sits close to the surface in many parcels. Produces the most powerful and age-worthy wines in Morey, closer in character to Chambertin than to the more delicate Morey style."
   },
   {
     "id": "clos-des-lambrays",
@@ -944,7 +957,8 @@
       "Effectively a monopole — Domaine des Lambrays owns virtually all 8.8 hectares",
       "Acquired by LVMH (Moët Hennessy) in 2014 for a reported €101 million",
       "Promoted to Grand Cru status only in 1981 — one of the last additions to the GC hierarchy"
-    ]
+    ],
+    "terroir": "A single-owner (monopole) Grand Cru of ~8.8 ha with clay-limestone soils on a consistent mid-slope position. Unusually, it only received Grand Cru status in 1981 — the most recently elevated of the classic Burgundy Grands Crus."
   },
   {
     "id": "clos-de-tart",
@@ -966,7 +980,8 @@
       "A perfect monopole — the entire 7.5 ha is owned by Artémis Domaines (François Pinault)",
       "The vineyard has been a single holding since the 12th century — owned by Cistercian nuns from 1141",
       "Sold for an estimated €200 million to Pinault in 2017 — the most expensive vineyard sale in history"
-    ]
+    ],
+    "terroir": "A monopole (~7.5 ha) enclosed by historic stone walls that retain heat and provide microclimate protection. Clay-limestone soils on a gentle mid-slope. Continuously cultivated since the 12th century — one of the most historically unbroken vineyards in Burgundy."
   },
   {
     "id": "clos-de-vougeot",
@@ -992,7 +1007,8 @@
       "With 80+ different owners, Clos de Vougeot is the ultimate proof that terroir alone doesn't guarantee quality",
       "The walled vineyard (clos) was assembled by Cistercian monks from the Abbey of Cîteaux between 1150–1336",
       "The Château within the clos is home to the Confrérie des Chevaliers du Tastevin — Burgundy's most famous wine brotherhood"
-    ]
+    ],
+    "terroir": "The most complex terroir story in Burgundy: ~50 ha with dramatically varied soil. The top third (thin limestone, highest elevation) approaches peak Grand Cru quality. The bottom third (heavy clay, valley floor, prone to flooding) produces the least distinguished wine — yet both carry the same Grand Cru label. Divided among roughly 80 different producers."
   },
   {
     "id": "echezeaux",
@@ -1018,7 +1034,8 @@
       "At nearly 38 ha, Echézeaux is one of the largest Burgundy Grand Crus — divided into 11 individual lieux-dits",
       "The quality varies dramatically between the top parcels (near Grands-Echézeaux) and those near the road",
       "DRC produces a celebrated Echézeaux that is a fraction of the price of their other Grand Crus"
-    ]
+    ],
+    "terroir": "A large Grand Cru (~37 ha) with highly varied soils — frequently criticised as inconsistent for the classification. The best parcels toward Vosne-Romanée have thin limestone; lower parcels have more clay. Divided among many owners, meaning the label is less reliable than a smaller climat would imply."
   },
   {
     "id": "grands-echezeaux",
@@ -1043,7 +1060,8 @@
       "Despite the name, 'Grands-Echézeaux' is not a superior version of Echézeaux — it is a separate, distinct climat",
       "Directly adjacent to Clos de Vougeot — the soils and exposures are very similar",
       "DRC's version is considered the benchmark — one of the more 'accessible' DRC Grand Crus"
-    ]
+    ],
+    "terroir": "Smaller (~9 ha) and more consistently high quality than neighbouring Echézeaux. Sits directly above the top of Clos de Vougeot on reddish-clay soils mixed with limestone, producing more structured and age-worthy wines with a more homogeneous soil profile."
   },
   {
     "id": "la-grande-rue",
@@ -1065,7 +1083,8 @@
       "A monopole — François Lamarche owns all 1.65 ha",
       "Promoted to Grand Cru status in 1992 — it was previously Premier Cru",
       "Literally runs between La Romanée-Conti and La Tâche, making it arguably the most uniquely-situated Grand Cru"
-    ]
+    ],
+    "terroir": "A strip of ~1.65 ha running between La Tâche and Romanée-Conti, monopole of Domaine Lamarche. Varied soils — some parcels have the thin limestone of their Grand Cru neighbours, others are more ordinary. Only received Grand Cru status in 1992, and has taken time to fulfil its potential."
   },
   {
     "id": "la-romanee",
@@ -1087,7 +1106,8 @@
       "At 0.85 ha, La Romanée is the smallest Grand Cru appellation in all of France",
       "A monopole owned entirely by the Liger-Belair family since the 19th century",
       "Fewer than 3,000 bottles are produced in a typical vintage"
-    ]
+    ],
+    "terroir": "The smallest AOC in France at ~0.85 ha, a monopole of Liger-Belair. Sits directly above Romanée-Conti with thinner, more rocky soil at slightly higher elevation. Very similar underlying terroir to RC, with additional wind exposure from the higher position."
   },
   {
     "id": "la-tache",
@@ -1109,7 +1129,8 @@
       "A DRC monopole — one of the few wholly-owned Grand Crus in Vosne-Romanée",
       "At 6 ha, it is larger than Romanée-Conti and DRC's most abundantly produced Grand Cru",
       "Prices rival Romanée-Conti — typically $3,000–$8,000 per bottle at retail"
-    ]
+    ],
+    "terroir": "A ~6 ha DRC monopole with slightly heavier soils than Romanée-Conti, containing more clay. Produces wines of comparable intensity but different character — fuller-bodied, sometimes more perfumed. The name refers to the distinctively reddish soil visible from the road."
   },
   {
     "id": "richebourg",
@@ -1134,7 +1155,8 @@
       "At 8 ha, it is the largest of the six DRC Grand Cru monopoles and near-monopoles in Vosne",
       "The name 'Richebourg' ('rich hill') reflects the clay-rich soils that give wines their lush character",
       "Leroy's Richebourg is considered by many to rival DRC's version"
-    ]
+    ],
+    "terroir": "The largest (~8 ha) and most powerful of the Vosne-Romanée Grands Crus. Deep, clay-enriched soils at the lower end of the Grand Cru zone give Richebourg its distinctive volume and texture — more body and richness than its uphill neighbours."
   },
   {
     "id": "romanee-conti",
@@ -1156,7 +1178,8 @@
       "A DRC monopole — one of the rarest and most expensive wines on earth (~5,000–6,000 bottles per year)",
       "A single bottle regularly fetches $15,000–$50,000+ at auction; the 1945 vintage sold for $558,000",
       "The Prince of Conti purchased the vineyard in 1760 and lent it his name — it was nationalised during the Revolution but returned to private ownership"
-    ]
+    ],
+    "terroir": "The most celebrated vineyard in the world at ~1.8 ha, a monopole of Domaine de la Romanée-Conti. Thin reddish-clay soil over fragmented limestone bedrock at mid-slope, with ancient vines tracing back before phylloxera. The combination of drainage, exposure, soil depth, and microbial life has never been fully explained — which is precisely what makes terroir a compelling concept."
   },
   {
     "id": "romanee-saint-vivant",
@@ -1181,7 +1204,8 @@
       "Originally owned by the abbey of Saint-Vivant de Vergy — one of the oldest monastic vineyards in Burgundy",
       "DRC controls 5.3 of the 9.4 ha; the remainder is split among several small producers",
       "Often described as 'the most Burgundian of all Burgundies' for its translucent, ethereal style"
-    ]
+    ],
+    "terroir": "Borders Romanée-Conti on its lower eastern side (~9.4 ha) with deeper soils and more clay, producing wines that were historically considered weaker than their neighbours but have improved dramatically in recent decades. Named for the medieval Abbey of Saint-Vivant whose monks cultivated it for centuries."
   },
   {
     "id": "corton",
@@ -1210,7 +1234,8 @@
       "The Corton hill is shared by three communes: Aloxe-Corton, Ladoix-Serrigny, and Pernand-Vergelesses",
       "Wines may be labelled 'Corton' or 'Corton + lieu-dit' (e.g. Corton Clos du Roi, Corton Les Bressandes)",
       "The hill produces both red (Corton) and white (Corton-Charlemagne) Grand Crus — unique in Burgundy"
-    ]
+    ],
+    "terroir": "The only red Grand Cru of the Côte de Beaune, spread across three communes on a large rounded hill. Iron-rich, reddish limestone soils with varied exposures — the best east and southeast-facing parcels produce the most complete wines. The scale (~160 ha) and variety of exposures create significant quality variation across the appellation."
   },
   {
     "id": "corton-charlemagne",
@@ -1236,7 +1261,8 @@
       "Charlemagne (742–814) owned vines on this hill and is said to have introduced white grapes",
       "Covers the upper western and southern flanks of the Corton hill — the white wine zone",
       "Bonneau du Martray, with 9.5 ha, is the largest single owner and the benchmark producer"
-    ]
+    ],
+    "terroir": "The white Grand Cru counterpart on the upper slopes of the Corton hill, where south and southwest exposures and thinner, whiter limestone soils favour Chardonnay over Pinot Noir. Named for Emperor Charlemagne, said to have owned vineyards here."
   },
   {
     "id": "charlemagne",
@@ -1258,7 +1284,8 @@
       "The 'Charlemagne' appellation is almost never used — producers may label their wine as 'Corton-Charlemagne' instead",
       "Covers the Pernand-Vergelesses portion of the Grand Cru hill",
       "Named after Emperor Charlemagne, who supposedly kept vines here in the 8th century"
-    ]
+    ],
+    "terroir": "A rarely-used designation for wines from the Pernand-Vergelesses portion of the Corton-Charlemagne zone — almost all producers use the Corton-Charlemagne name. The underlying soils are identical; the distinction is purely administrative."
   },
   {
     "id": "montrachet",
@@ -1284,7 +1311,8 @@
       "Alexandre Dumas decreed it should be drunk 'kneeling, with head bowed and in a spirit of devotion'",
       "Straddles the boundary of Puligny-Montrachet (southern part) and Chassagne-Montrachet (northern part)",
       "DRC acquired 0.67 ha in 2018 — the most recent major transaction for this appellation"
-    ]
+    ],
+    "terroir": "The most celebrated white wine vineyard in the world at ~8 ha, straddling Puligny and Chassagne on a southeast-facing slope. Thin limestone soils with a precise balance of limestone and clay, elevated levels of magnesium and potassium, and near-perfect drainage — conditions that appear uniquely suited to Chardonnay."
   },
   {
     "id": "chevalier-montrachet",
@@ -1310,7 +1338,8 @@
       "Sits directly above Montrachet on the slope — thinner, more limestone-rich soils produce a leaner, more austere style",
       "Leflaive is the dominant owner with ~2 ha of the 7.5 ha total",
       "Often more consistent than Montrachet across difficult vintages due to its better drainage"
-    ]
+    ],
+    "terroir": "Sits directly above Montrachet on thinner, more rocky soil at higher altitude. Later ripening due to elevation gives wines higher acidity and a more vertical, mineral character. The thin, stony soil forces very low yields and maximum concentration."
   },
   {
     "id": "batard-montrachet",
@@ -1336,7 +1365,8 @@
       "Straddles Puligny-Montrachet and Chassagne-Montrachet — the boundary runs through the middle",
       "At 11.9 ha, it is the largest of the Montrachet Grands Crus",
       "The name 'Bâtard' (bastard) may refer to an illegitimate son of a medieval lord who inherited these vines"
-    ]
+    ],
+    "terroir": "Sits below Montrachet on deeper, richer soils with more clay — the most full-bodied of the Montrachet Grand Crus. The extra soil depth and clay produce wines with more texture and richness, though with slightly less precision than the thinner-soiled parcels above."
   },
   {
     "id": "bienvenues-batard-montrachet",
@@ -1361,7 +1391,8 @@
       "Lies entirely within Puligny-Montrachet — there is no Chassagne component",
       "The whimsical name translates as 'Welcome to Bâtard-Montrachet'",
       "At 3.7 ha, production is limited — often overshadowed by its larger neighbour Bâtard"
-    ]
+    ],
+    "terroir": "A small section (~3.7 ha) of the Bâtard-Montrachet zone entirely within Puligny-Montrachet. Similar soils to Bâtard but with a slightly more elegant style. The name reflects its position as a neighbour and near-equal to the Grand Cru beside it."
   },
   {
     "id": "criots-batard-montrachet",
@@ -1386,6 +1417,7 @@
       "The smallest of the Montrachet Grand Crus at 1.57 ha — and lies entirely in Chassagne-Montrachet",
       "Fewer than 6,000 bottles are produced annually across all producers",
       "The name 'Criots' derives from the local dialect word for stony, cried-out (exhausted) soil"
-    ]
+    ],
+    "terroir": "The smallest Grand Cru in the Côte de Beaune (~1.57 ha), entirely within Chassagne-Montrachet. Deep marl soils at the bottom of the slope give the richest and most full-bodied of the Montrachet satellites — powerful Chardonnay with less mineral precision than the higher sites."
   }
 ]
