@@ -82,7 +82,7 @@ export default function Home() {
       {/* Fact card panel */}
       <div
         className={`flex-shrink-0 border-r border-[#D4C5A9] bg-[#FDFAF5] overflow-hidden transition-all duration-300 ${
-          panelOpen ? 'w-72' : 'w-0'
+          panelOpen ? 'w-full sm:w-72' : 'w-0'
         }`}
       >
         {panelOpen && (
@@ -94,8 +94,8 @@ export default function Home() {
         )}
       </div>
 
-      {/* Map */}
-      <div className="flex-1 bg-[#2C1810] overflow-hidden" style={{ minWidth: 0 }}>
+      {/* Map — hidden on mobile when fact card is open */}
+      <div className={`flex-1 bg-[#2C1810] overflow-hidden ${panelOpen ? 'hidden sm:block' : ''}`} style={{ minWidth: 0, isolation: 'isolate' }}>
         <BurgundyMap
           selectedRegion={selectedRegion}
           onSelectRegion={handleSelectRegion}

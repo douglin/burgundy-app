@@ -30,7 +30,7 @@ export default function Nav() {
   }
 
   return (
-    <header className="bg-[#F5F0E8] border-b border-[#D4C5A9] relative z-30">
+    <header className="bg-[#F5F0E8] border-b border-[#D4C5A9] relative z-[1000]">
       <div className="max-w-5xl mx-auto px-6 py-4 flex flex-col items-center gap-3">
         <div className="w-full flex items-center justify-center relative">
           {/* Hamburger — mobile only */}

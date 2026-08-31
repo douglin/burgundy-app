@@ -17,7 +17,7 @@ import Vintages from './pages/Vintages'
 
 export default function App() {
   return (
-    <div className="flex flex-col h-screen bg-[#F5F0E8] text-[#2C1810]">
+    <div className="flex flex-col h-dvh bg-[#F5F0E8] text-[#2C1810]">
       <Nav />
       <main className="flex-1 overflow-y-auto min-h-0">
         <Routes>
