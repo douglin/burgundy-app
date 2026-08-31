@@ -1,8 +1,11 @@
 import { Route, Routes } from 'react-router-dom'
 import Nav from './components/Nav'
 import Cellar from './pages/Cellar'
+import Classification from './pages/Classification'
 import Decode from './pages/Decode'
 import Home from './pages/Home'
+import Learn from './pages/Learn'
+import Terroir from './pages/Terroir'
 import Log from './pages/Log'
 import LogDetail from './pages/LogDetail'
 import LogEdit from './pages/LogEdit'
@@ -30,6 +33,9 @@ export default function App() {
           <Route path="/producers" element={<Producers />} />
           <Route path="/producers/:id" element={<ProducerDetail />} />
           <Route path="/decode" element={<Decode />} />
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/learn/classification" element={<Classification />} />
+          <Route path="/learn/terroir" element={<Terroir />} />
         </Routes>
       </main>
     </div>

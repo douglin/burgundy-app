@@ -9,6 +9,7 @@ const links = [
   { to: '/quiz', label: 'Quiz' },
   { to: '/producers', label: 'Producers' },
   { to: '/decode', label: 'Decode' },
+  { to: '/learn', label: 'Learn' },
 ]
 
 function linkCls({ isActive }) {
