@@ -3,113 +3,355 @@
   "features": [
     {
       "type": "Feature",
-      "properties": { "id": "marsannay", "name": "Marsannay", "regionId": "cote-de-nuits", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [5.005, 47.300] }
+      "properties": {
+        "id": "marsannay",
+        "name": "Marsannay",
+        "regionId": "cote-de-nuits",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.005,
+          47.3
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "gevrey-chambertin", "name": "Gevrey-Chambertin", "regionId": "cote-de-nuits", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.970, 47.229] }
+      "properties": {
+        "id": "gevrey-chambertin",
+        "name": "Gevrey-Chambertin",
+        "regionId": "cote-de-nuits",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.97,
+          47.229
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "morey-saint-denis", "name": "Morey-Saint-Denis", "regionId": "cote-de-nuits", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.960, 47.200] }
+      "properties": {
+        "id": "morey-saint-denis",
+        "name": "Morey-Saint-Denis",
+        "regionId": "cote-de-nuits",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.96,
+          47.2
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "chambolle-musigny", "name": "Chambolle-Musigny", "regionId": "cote-de-nuits", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.955, 47.183] }
+      "properties": {
+        "id": "chambolle-musigny",
+        "name": "Chambolle-Musigny",
+        "regionId": "cote-de-nuits",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.955,
+          47.183
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "vougeot", "name": "Vougeot", "regionId": "cote-de-nuits", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.958, 47.164] }
+      "properties": {
+        "id": "vougeot",
+        "name": "Vougeot",
+        "regionId": "cote-de-nuits",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.958,
+          47.164
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "flagey-echezeaux", "name": "Flagey-Echézeaux", "regionId": "cote-de-nuits", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.9514, 47.17055] }
+      "properties": {
+        "id": "flagey-echezeaux",
+        "name": "Flagey-Echézeaux",
+        "regionId": "cote-de-nuits",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.9514,
+          47.17055
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "vosne-romanee", "name": "Vosne-Romanée", "regionId": "cote-de-nuits", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.959, 47.151] }
+      "properties": {
+        "id": "vosne-romanee",
+        "name": "Vosne-Romanée",
+        "regionId": "cote-de-nuits",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.959,
+          47.151
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "nuits-saint-georges", "name": "Nuits-Saint-Georges", "regionId": "cote-de-nuits", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.956, 47.124] }
+      "properties": {
+        "id": "nuits-saint-georges",
+        "name": "Nuits-Saint-Georges",
+        "regionId": "cote-de-nuits",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.956,
+          47.124
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "aloxe-corton", "name": "Aloxe-Corton", "regionId": "cote-de-beaune", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.873, 47.078] }
+      "properties": {
+        "id": "aloxe-corton",
+        "name": "Aloxe-Corton",
+        "regionId": "cote-de-beaune",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.873,
+          47.078
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "beaune", "name": "Beaune", "regionId": "cote-de-beaune", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.839, 47.022] }
+      "properties": {
+        "id": "beaune",
+        "name": "Beaune",
+        "regionId": "cote-de-beaune",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.839,
+          47.022
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "pommard", "name": "Pommard", "regionId": "cote-de-beaune", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.793, 46.997] }
+      "properties": {
+        "id": "pommard",
+        "name": "Pommard",
+        "regionId": "cote-de-beaune",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.793,
+          46.997
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "meursault", "name": "Meursault", "regionId": "cote-de-beaune", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.774, 46.975] }
+      "properties": {
+        "id": "meursault",
+        "name": "Meursault",
+        "regionId": "cote-de-beaune",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.774,
+          46.975
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "puligny-montrachet", "name": "Puligny-Montrachet", "regionId": "cote-de-beaune", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.762, 46.958] }
+      "properties": {
+        "id": "puligny-montrachet",
+        "name": "Puligny-Montrachet",
+        "regionId": "cote-de-beaune",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.762,
+          46.958
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "chassagne-montrachet", "name": "Chassagne-Montrachet", "regionId": "cote-de-beaune", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.757, 46.940] }
+      "properties": {
+        "id": "chassagne-montrachet",
+        "name": "Chassagne-Montrachet",
+        "regionId": "cote-de-beaune",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.757,
+          46.94
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "santenay", "name": "Santenay", "regionId": "cote-de-beaune", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.705, 46.900] }
+      "properties": {
+        "id": "santenay",
+        "name": "Santenay",
+        "regionId": "cote-de-beaune",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.705,
+          46.9
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "chablis-village", "name": "Chablis", "regionId": "chablis", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [3.793, 47.814] }
+      "properties": {
+        "id": "chablis-village",
+        "name": "Chablis",
+        "regionId": "chablis",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.793,
+          47.814
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "mercurey", "name": "Mercurey", "regionId": "cote-chalonnaise", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.742, 46.742] }
+      "properties": {
+        "id": "mercurey",
+        "name": "Mercurey",
+        "regionId": "cote-chalonnaise",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.715,
+          46.715
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "givry", "name": "Givry", "regionId": "cote-chalonnaise", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.751, 46.778] }
+      "properties": {
+        "id": "givry",
+        "name": "Givry",
+        "regionId": "cote-chalonnaise",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.751,
+          46.778
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "rully", "name": "Rully", "regionId": "cote-chalonnaise", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.742, 46.872] }
+      "properties": {
+        "id": "rully",
+        "name": "Rully",
+        "regionId": "cote-chalonnaise",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.742,
+          46.872
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "pouilly-fuisse", "name": "Pouilly-Fuissé", "regionId": "maconnais", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.757, 46.290] }
+      "properties": {
+        "id": "pouilly-fuisse",
+        "name": "Pouilly-Fuissé",
+        "regionId": "maconnais",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.757,
+          46.29
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "macon", "name": "Mâcon", "regionId": "maconnais", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.828, 46.307] }
+      "properties": {
+        "id": "macon",
+        "name": "Mâcon",
+        "regionId": "maconnais",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.828,
+          46.307
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "id": "saint-veran", "name": "Saint-Véran", "regionId": "maconnais", "level": "village" },
-      "geometry": { "type": "Point", "coordinates": [4.757, 46.330] }
+      "properties": {
+        "id": "saint-veran",
+        "name": "Saint-Véran",
+        "regionId": "maconnais",
+        "level": "village"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.757,
+          46.33
+        ]
+      }
     }
   ]
 }
