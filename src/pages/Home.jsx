@@ -49,9 +49,9 @@ export default function Home() {
   const panelOpen = !!cardData
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-full relative">
 
-      {/* Left intro — hidden when panel is open */}
+      {/* Left intro — desktop only, hidden when panel is open */}
       {!panelOpen && (
         <div className="hidden lg:flex flex-col justify-center px-10 text-[#EDE6D6] bg-[#2C1810] w-64 flex-shrink-0">
           <p className="text-[#C9A84C] text-[10px] tracking-[0.3em] uppercase mb-3">
@@ -76,11 +76,28 @@ export default function Home() {
         </div>
       )}
 
-      {/* Fact card panel */}
+      {/* Map — always visible */}
+      <div className="flex-1 bg-[#2C1810] overflow-hidden" style={{ minWidth: 0, isolation: 'isolate' }}>
+        <BurgundyMap
+          selectedRegion={selectedRegion}
+          onSelectRegion={handleSelectRegion}
+          selectedVillage={selectedVillage}
+          onSelectVillage={handleSelectVillage}
+          onSelectCru={handleSelectCru}
+          sheetOpen={panelOpen}
+        />
+      </div>
+
+      {/* Fact card:
+            mobile  — fixed bottom sheet sliding up over the map
+            desktop — static side panel to the left of the map          */}
       <div
-        className={`flex-shrink-0 border-r border-[#D4C5A9] bg-[#FDFAF5] overflow-hidden transition-all duration-300 ${
-          panelOpen ? 'w-full sm:w-72' : 'w-0'
-        }`}
+        className={`
+          bg-[#FDFAF5] border-[#D4C5A9] overflow-hidden transition-all duration-300
+          fixed bottom-0 left-0 right-0 z-[500] border-t
+          sm:static sm:flex-shrink-0 sm:border-r sm:border-t-0 sm:z-auto sm:order-first
+          ${panelOpen ? 'h-[56vh] sm:h-auto sm:w-72' : 'h-0 sm:w-0'}
+        `}
       >
         {panelOpen && (
           <FactCard
@@ -89,17 +106,6 @@ export default function Home() {
             onClose={handleClose}
           />
         )}
-      </div>
-
-      {/* Map — hidden on mobile when fact card is open */}
-      <div className={`flex-1 bg-[#2C1810] overflow-hidden ${panelOpen ? 'hidden sm:block' : ''}`} style={{ minWidth: 0, isolation: 'isolate' }}>
-        <BurgundyMap
-          selectedRegion={selectedRegion}
-          onSelectRegion={handleSelectRegion}
-          selectedVillage={selectedVillage}
-          onSelectVillage={handleSelectVillage}
-          onSelectCru={handleSelectCru}
-        />
       </div>
     </div>
   )

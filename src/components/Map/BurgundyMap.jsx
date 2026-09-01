@@ -158,6 +158,7 @@ export default function BurgundyMap({
   selectedRegion, onSelectRegion,
   selectedVillage, onSelectVillage,
   onSelectCru,
+  sheetOpen,
 }) {
   const [regions, setRegions] = useState(null)
   const [villages, setVillages] = useState(null)
@@ -366,11 +367,11 @@ export default function BurgundyMap({
         )}
       </div>
 
-      {/* Back buttons */}
+      {/* Back buttons — float above the bottom sheet on mobile */}
       {selectedVillage && (
         <button
           onClick={() => onSelectVillage(null)}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors"
+          className={`absolute left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors ${sheetOpen ? 'bottom-[58vh] sm:bottom-4' : 'bottom-4'}`}
         >
           ← Back to {selectedRegion?.name}
         </button>
@@ -378,7 +379,7 @@ export default function BurgundyMap({
       {selectedRegion && !selectedVillage && (
         <button
           onClick={() => onSelectRegion(null)}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors"
+          className={`absolute left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors ${sheetOpen ? 'bottom-[58vh] sm:bottom-4' : 'bottom-4'}`}
         >
           ← Back to all regions
         </button>
