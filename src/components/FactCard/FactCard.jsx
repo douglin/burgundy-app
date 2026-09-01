@@ -30,7 +30,7 @@ function VintageStrip({ regionId }) {
 
   return (
     <div>
-      <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-2">Recent Vintages</p>
+      <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-2">Recent Vintages</p>
       <div className="flex gap-1">
         {RECENT_YEARS.map(year => {
           const score = vintages.years[year]?.[vintageRegionId]
@@ -76,7 +76,7 @@ function NotesField({ id }) {
 
   return (
     <div>
-      <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">My Notes</p>
+      <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-1">My Notes</p>
       <textarea
         rows={3}
         value={note}
@@ -119,7 +119,7 @@ export default function FactCard({ selection, type, onClose }) {
         <div className="px-6 py-5 border-b border-[#D4C5A9]">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-[#4A2A1A] text-[10px] tracking-[0.3em] uppercase mb-1">
+              <p className="text-[#4A2A1A] text-xs font-medium tracking-[0.3em] uppercase mb-1">
                 {selection.level === 'grand-cru' ? 'Grand Cru' : 'Premier Cru'}
               </p>
               <h2
@@ -128,7 +128,7 @@ export default function FactCard({ selection, type, onClose }) {
               >
                 {selection.name}
               </h2>
-              <p className="text-xs text-[#6B5244] mt-1 leading-snug">
+              <p className="text-sm text-[#6B5244] mt-1 leading-snug">
                 {LEVEL_CONTEXT[selection.level]}
               </p>
             </div>
@@ -137,13 +137,13 @@ export default function FactCard({ selection, type, onClose }) {
         </div>
         <div className="flex-1 overflow-y-auto px-6 py-5 space-y-4">
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Size</p>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-1">Size</p>
             <p className="text-[#2C1810] text-sm">{selection.hectares} hectares</p>
           </div>
 
           {cruApp?.grapes && (
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Grapes</p>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-1">Grapes</p>
               <p className="text-[#2C1810] text-sm">
                 {[...(cruApp.grapes.red || []), ...(cruApp.grapes.white || [])].join(', ')}
               </p>
@@ -152,21 +152,21 @@ export default function FactCard({ selection, type, onClose }) {
 
           {cruApp?.style && (
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Style</p>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-1">Style</p>
               <p className="text-[#2C1810] text-sm leading-relaxed italic">{cruApp.style}</p>
             </div>
           )}
 
           {cruApp?.terroir && (
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Terroir</p>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-1">Terroir</p>
               <p className="text-[#2C1810] text-sm leading-relaxed">{cruApp.terroir}</p>
             </div>
           )}
 
           {cruApp?.facts?.length > 0 && (
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-2">Key Facts</p>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-2">Key Facts</p>
               <ul className="space-y-1.5">
                 {cruApp.facts.map((f, i) => (
                   <li key={i} className="flex gap-2 text-sm text-[#2C1810]">
@@ -180,7 +180,7 @@ export default function FactCard({ selection, type, onClose }) {
 
           {cruApp?.keyProducers?.length > 0 && (
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-2">Key Producers</p>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-2">Key Producers</p>
               <ul className="space-y-1">
                 {cruApp.keyProducers.map(name => (
                   <li key={name} className="text-sm text-[#2C1810] flex gap-2">
@@ -193,7 +193,7 @@ export default function FactCard({ selection, type, onClose }) {
 
           {!cruApp && (
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Classification</p>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-1">Classification</p>
               <p className="text-[#2C1810] text-sm">
                 {selection.level === 'grand-cru'
                   ? "Burgundy's highest classification — wines may omit the village name entirely."
@@ -216,7 +216,7 @@ export default function FactCard({ selection, type, onClose }) {
       <div className="px-6 py-5 border-b border-[#D4C5A9]">
         <div className="flex justify-between items-start">
           <div>
-            <p className="text-[#4A2A1A] text-[10px] tracking-[0.3em] uppercase mb-1">
+            <p className="text-[#4A2A1A] text-xs font-medium tracking-[0.3em] uppercase mb-1">
               {type === 'region' ? 'Region' : selection.level || 'Village'}
             </p>
             <h2
@@ -225,7 +225,7 @@ export default function FactCard({ selection, type, onClose }) {
             >
               {selection.name}
             </h2>
-            <p className="text-xs text-[#6B5244] mt-1 leading-snug">
+            <p className="text-sm text-[#6B5244] mt-1 leading-snug">
               {LEVEL_CONTEXT[type === 'region' ? 'region' : 'village']}
             </p>
           </div>
@@ -242,7 +242,7 @@ export default function FactCard({ selection, type, onClose }) {
       <div className="flex-1 overflow-y-auto px-6 py-5 space-y-5">
         {(selection.grapes || appellation?.grapes) && (
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Grapes</p>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-1">Grapes</p>
             <p className="text-[#2C1810] text-sm">
               {typeof selection.grapes === 'string'
                 ? selection.grapes
@@ -253,7 +253,7 @@ export default function FactCard({ selection, type, onClose }) {
 
         {(selection.style || appellation?.style) && (
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Style</p>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-1">Style</p>
             <p className="text-[#2C1810] text-sm leading-relaxed italic">
               {appellation?.style || selection.style}
             </p>
@@ -262,28 +262,28 @@ export default function FactCard({ selection, type, onClose }) {
 
         {type !== 'region' && appellation?.terroir && (
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Terroir</p>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-1">Terroir</p>
             <p className="text-[#2C1810] text-sm leading-relaxed">{appellation.terroir}</p>
           </div>
         )}
 
         {type === 'region' && selection.summary && (
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">About</p>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-1">About</p>
             <p className="text-[#2C1810] text-sm leading-relaxed">{selection.summary}</p>
           </div>
         )}
 
         {appellation?.agingRules && (
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Aging Rules</p>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-1">Aging Rules</p>
             <p className="text-[#2C1810] text-sm">{appellation.agingRules}</p>
           </div>
         )}
 
         {appellation?.facts?.length > 0 && (
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-2">Key Facts</p>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-2">Key Facts</p>
             <ul className="space-y-1.5">
               {appellation.facts.map((f, i) => (
                 <li key={i} className="flex gap-2 text-sm text-[#2C1810]">
@@ -297,7 +297,7 @@ export default function FactCard({ selection, type, onClose }) {
 
         {relatedProducers.length > 0 && (
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-2">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-2">
               {type === 'region' ? 'Notable Producers' : 'Key Producers'}
             </p>
             <ul className="space-y-1.5">
@@ -318,7 +318,7 @@ export default function FactCard({ selection, type, onClose }) {
 
         {appellation?.keyProducers?.length > 0 && relatedProducers.length === 0 && (
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-2">Key Producers</p>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B5244] mb-2">Key Producers</p>
             <ul className="space-y-1">
               {appellation.keyProducers.map(name => (
                 <li key={name} className="text-sm text-[#2C1810] flex gap-2">
