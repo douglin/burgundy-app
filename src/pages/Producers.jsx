@@ -9,7 +9,7 @@ export default function Producers() {
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
-      <p className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase mb-1">Estates</p>
+      <p className="text-[#4A2A1A] text-xs tracking-[0.3em] uppercase mb-1">Estates</p>
       <h1
         style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         className="text-3xl font-bold text-[#6B0F1A] mb-6"
@@ -54,7 +54,7 @@ export default function Producers() {
               >
                 {p.name}
               </p>
-              <p className="text-xs tracking-wide text-[#C9A84C] mb-3 capitalize">
+              <p className="text-xs tracking-wide text-[#4A2A1A] mb-3 capitalize">
                 {p.village?.replace(/-/g, ' ')} · Est. {p.founded}
               </p>
               <p className="text-sm text-[#6B5244] leading-relaxed line-clamp-2">{p.style}</p>

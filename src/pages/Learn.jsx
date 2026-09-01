@@ -27,7 +27,7 @@ const TOPICS = [
 export default function Learn() {
   return (
     <div className="max-w-2xl mx-auto px-6 py-12">
-      <p className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase mb-1">Reference</p>
+      <p className="text-[#4A2A1A] text-xs tracking-[0.3em] uppercase mb-1">Reference</p>
       <h1
         style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         className="text-3xl font-bold text-[#6B0F1A] mb-2"
@@ -48,7 +48,7 @@ export default function Learn() {
             className="block border border-[#D4C5A9] bg-white/50 hover:bg-white/80 transition-colors group"
           >
             <div className="px-6 py-5">
-              <p className="text-[#C9A84C] text-[10px] tracking-[0.3em] uppercase mb-1">{topic.eyebrow}</p>
+              <p className="text-[#4A2A1A] text-[10px] tracking-[0.3em] uppercase mb-1">{topic.eyebrow}</p>
               <p
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                 className="text-xl font-bold text-[#6B0F1A] mb-2 group-hover:underline"
@@ -56,7 +56,7 @@ export default function Learn() {
                 {topic.title}
               </p>
               <p className="text-sm text-[#6B5244] leading-relaxed mb-3">{topic.desc}</p>
-              <p className="text-xs text-[#C9A84C] tracking-wide italic">{topic.detail}</p>
+              <p className="text-xs text-[#4A2A1A] tracking-wide italic">{topic.detail}</p>
             </div>
           </Link>
         ))}

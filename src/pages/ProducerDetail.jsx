@@ -23,7 +23,7 @@ export default function ProducerDetail() {
         ← Producers
       </Link>
 
-      <p className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase mb-1 capitalize">
+      <p className="text-[#4A2A1A] text-xs tracking-[0.3em] uppercase mb-1 capitalize">
         {producer.village?.replace(/-/g, ' ')} · Est. {producer.founded}
       </p>
       <h1

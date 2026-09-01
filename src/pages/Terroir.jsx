@@ -52,7 +52,7 @@ const REGIONS_COMPARE = [
 export default function Terroir() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
-      <p className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase mb-1">Learn</p>
+      <p className="text-[#4A2A1A] text-xs tracking-[0.3em] uppercase mb-1">Learn</p>
       <h1
         style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         className="text-3xl font-bold text-[#6B0F1A] mb-2"
@@ -168,7 +168,7 @@ export default function Terroir() {
             { label: 'Iron', desc: 'Some plots in Pommard and Corton have iron-rich soil (reddish colour), which contributes to fuller-bodied, more tannic wines.' },
           ].map(item => (
             <li key={item.label} className="flex gap-3 text-sm text-[#2C1810] leading-relaxed">
-              <span className="text-[#C9A84C] flex-shrink-0 font-semibold w-20">{item.label}</span>
+              <span className="text-[#4A2A1A] flex-shrink-0 font-semibold w-20">{item.label}</span>
               <span>{item.desc}</span>
             </li>
           ))}

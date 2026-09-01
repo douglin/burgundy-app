@@ -74,7 +74,7 @@ const REGIONAL_LEVELS = [
 export default function Classification() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
-      <p className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase mb-1">Learn</p>
+      <p className="text-[#4A2A1A] text-xs tracking-[0.3em] uppercase mb-1">Learn</p>
       <h1
         style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         className="text-3xl font-bold text-[#6B0F1A] mb-2"

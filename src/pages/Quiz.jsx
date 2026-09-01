@@ -59,7 +59,7 @@ export default function Quiz() {
     const missed = questions.filter((q) => q.selected !== q.answer)
     return (
       <div className="max-w-xl mx-auto px-6 py-12">
-        <p className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase mb-1">Results</p>
+        <p className="text-[#4A2A1A] text-xs tracking-[0.3em] uppercase mb-1">Results</p>
         <h1
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           className="text-3xl font-bold text-[#6B0F1A] mb-1"
@@ -109,7 +109,7 @@ export default function Quiz() {
     <div className="max-w-xl mx-auto px-6 py-12">
       <div className="flex justify-between items-center mb-6">
         <div>
-          <p className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase mb-1">
+          <p className="text-[#4A2A1A] text-xs tracking-[0.3em] uppercase mb-1">
             {current.category}
           </p>
           <h1
@@ -145,7 +145,7 @@ export default function Quiz() {
           } else if (isSelected) {
             cls += 'border-red-300 bg-red-50 text-red-700'
           } else {
-            cls += 'border-[#EDE6D6] text-[#C9A84C]'
+            cls += 'border-[#EDE6D6] text-[#4A2A1A]'
           }
           return (
             <li key={choice}>

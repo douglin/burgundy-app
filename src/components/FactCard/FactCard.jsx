@@ -119,7 +119,7 @@ export default function FactCard({ selection, type, onClose }) {
         <div className="px-6 py-5 border-b border-[#D4C5A9]">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-[#C9A84C] text-[10px] tracking-[0.3em] uppercase mb-1">
+              <p className="text-[#4A2A1A] text-[10px] tracking-[0.3em] uppercase mb-1">
                 {selection.level === 'grand-cru' ? 'Grand Cru' : 'Premier Cru'}
               </p>
               <h2
@@ -216,7 +216,7 @@ export default function FactCard({ selection, type, onClose }) {
       <div className="px-6 py-5 border-b border-[#D4C5A9]">
         <div className="flex justify-between items-start">
           <div>
-            <p className="text-[#C9A84C] text-[10px] tracking-[0.3em] uppercase mb-1">
+            <p className="text-[#4A2A1A] text-[10px] tracking-[0.3em] uppercase mb-1">
               {type === 'region' ? 'Region' : selection.level || 'Village'}
             </p>
             <h2

@@ -20,7 +20,7 @@ export default function Vintages() {
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
-      <p className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase mb-1">Reference</p>
+      <p className="text-[#4A2A1A] text-xs tracking-[0.3em] uppercase mb-1">Reference</p>
       <h1
         style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         className="text-3xl font-bold text-[#6B0F1A] mb-2"
@@ -33,7 +33,7 @@ export default function Vintages() {
 
       <div className="h-px bg-[#D4C5A9] mb-8" />
 
-      <p className="sm:hidden text-xs text-[#C9A84C] mb-3 tracking-wide">← Scroll to see all regions →</p>
+      <p className="sm:hidden text-xs text-[#4A2A1A] mb-3 tracking-wide">← Scroll to see all regions →</p>
 
       <div className="overflow-x-auto">
         <table className="w-full text-sm border-collapse min-w-[480px]">

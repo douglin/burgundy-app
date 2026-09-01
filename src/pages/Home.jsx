@@ -54,7 +54,7 @@ export default function Home() {
       {/* Left intro — desktop only, hidden when panel is open */}
       {!panelOpen && (
         <div className="hidden lg:flex flex-col justify-center px-10 text-[#EDE6D6] bg-[#2C1810] w-64 flex-shrink-0">
-          <p className="text-[#C9A84C] text-[10px] tracking-[0.3em] uppercase mb-3">
+          <p className="text-[#4A2A1A] text-[10px] tracking-[0.3em] uppercase mb-3">
             France · Bourgogne
           </p>
           <p
@@ -96,7 +96,7 @@ export default function Home() {
           bg-[#FDFAF5] border-[#D4C5A9] overflow-hidden transition-all duration-300
           fixed bottom-0 left-0 right-0 z-[500] border-t
           sm:static sm:flex-shrink-0 sm:border-r sm:border-t-0 sm:z-auto sm:order-first
-          ${panelOpen ? 'h-[56vh] sm:h-auto sm:w-72' : 'h-0 sm:w-0'}
+          ${panelOpen ? 'h-[45vh] sm:h-auto sm:w-72' : 'h-0 sm:w-0'}
         `}
       >
         {panelOpen && (

@@ -371,7 +371,7 @@ export default function BurgundyMap({
       {selectedVillage && (
         <button
           onClick={() => onSelectVillage(null)}
-          className={`absolute left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors ${sheetOpen ? 'bottom-[58vh] sm:bottom-4' : 'bottom-4'}`}
+          className={`absolute left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors ${sheetOpen ? 'bottom-[47vh] sm:bottom-4' : 'bottom-4'}`}
         >
           ← Back to {selectedRegion?.name}
         </button>
@@ -379,7 +379,7 @@ export default function BurgundyMap({
       {selectedRegion && !selectedVillage && (
         <button
           onClick={() => onSelectRegion(null)}
-          className={`absolute left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors ${sheetOpen ? 'bottom-[58vh] sm:bottom-4' : 'bottom-4'}`}
+          className={`absolute left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors ${sheetOpen ? 'bottom-[47vh] sm:bottom-4' : 'bottom-4'}`}
         >
           ← Back to all regions
         </button>
