@@ -1,6 +1,56 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import appellations from '../../data/appellations.json'
 import producers from '../../data/producers.json'
+import vintages from '../../data/vintages.json'
+
+const SCORE_STYLE = [
+  null,
+  { bg: '#F5D0D0', text: '#7B1D1D' },
+  { bg: '#F5E4C0', text: '#7B5A1D' },
+  { bg: '#F5F0C0', text: '#5A5A1D' },
+  { bg: '#D4EAC0', text: '#2A5A1D' },
+  { bg: '#B8D9A0', text: '#1A4A0A' },
+]
+const SCORE_LABEL = ['', 'Poor', 'Below avg', 'Good', 'Very good', 'Exceptional']
+
+const REGION_TO_VINTAGE = {
+  'cote-de-nuits':    'cote-de-nuits',
+  'cote-de-beaune':   'cote-de-beaune',
+  'chablis':          'chablis',
+  'cote-chalonnaise': 'cote-de-beaune',
+  'maconnais':        'maconnais',
+}
+
+const RECENT_YEARS = Object.keys(vintages.years).sort((a, b) => b - a).slice(0, 6)
+
+function VintageStrip({ regionId }) {
+  const vintageRegionId = REGION_TO_VINTAGE[regionId]
+  if (!vintageRegionId) return null
+
+  return (
+    <div>
+      <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-2">Recent Vintages</p>
+      <div className="flex gap-1">
+        {RECENT_YEARS.map(year => {
+          const score = vintages.years[year]?.[vintageRegionId]
+          const s = SCORE_STYLE[score] ?? { bg: '#EDE6D6', text: '#6B5244' }
+          return (
+            <div key={year} className="flex-1 text-center" title={score ? SCORE_LABEL[score] : '–'}>
+              <div
+                className="h-8 flex items-center justify-center text-xs font-bold"
+                style={{ backgroundColor: s.bg, color: s.text }}
+              >
+                {score ?? '–'}
+              </div>
+              <p className="text-[9px] text-[#9A7B6A] mt-0.5">{year.slice(2)}</p>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
 
 const LEVEL_CONTEXT = {
   'grand-cru':   "Burgundy's highest classification. The vineyard name appears alone on the label — no village qualifier.",
@@ -8,6 +58,45 @@ const LEVEL_CONTEXT = {
   'village':     'The village name is the appellation. One step below Premier Cru.',
   'region':      'Broadest category — the entry point to Burgundy.',
 }
+
+function NotesField({ id }) {
+  const key = `burg-note-${id}`
+  const [note, setNote] = useState(() => localStorage.getItem(key) ?? '')
+
+  useEffect(() => {
+    setNote(localStorage.getItem(`burg-note-${id}`) ?? '')
+  }, [id])
+
+  function handleChange(e) {
+    const text = e.target.value
+    setNote(text)
+    if (text) localStorage.setItem(key, text)
+    else localStorage.removeItem(key)
+  }
+
+  return (
+    <div>
+      <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">My Notes</p>
+      <textarea
+        rows={3}
+        value={note}
+        onChange={handleChange}
+        placeholder="Tasting notes, impressions…"
+        className="w-full text-sm text-[#2C1810] bg-[#F5F0E8] border border-[#D4C5A9] px-3 py-2 resize-none focus:outline-none focus:border-[#C9A84C] placeholder-[#B8A898]"
+      />
+    </div>
+  )
+}
+
+const Footer = () => (
+  <div className="px-6 py-4 border-t border-[#D4C5A9]">
+    <div className="flex gap-3 text-[10px] tracking-widest uppercase text-[#6B5244]">
+      <Link to="/learn/classification" className="hover:text-[#6B0F1A] transition-colors">Classification ↗</Link>
+      <span className="opacity-40">·</span>
+      <Link to="/learn/terroir" className="hover:text-[#6B0F1A] transition-colors">Terroir ↗</Link>
+    </div>
+  </div>
+)
 
 export default function FactCard({ selection, type, onClose }) {
   if (!selection) return null
@@ -68,6 +157,13 @@ export default function FactCard({ selection, type, onClose }) {
             </div>
           )}
 
+          {cruApp?.terroir && (
+            <div>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Terroir</p>
+              <p className="text-[#2C1810] text-sm leading-relaxed">{cruApp.terroir}</p>
+            </div>
+          )}
+
           {cruApp?.facts?.length > 0 && (
             <div>
               <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-2">Key Facts</p>
@@ -105,27 +201,18 @@ export default function FactCard({ selection, type, onClose }) {
               </p>
             </div>
           )}
+
+          <VintageStrip regionId={selection.regionId} />
+          <NotesField id={selection.id} />
         </div>
-        <div className="px-6 py-4 border-t border-[#D4C5A9] space-y-2">
-          <div className="flex gap-3 text-[10px] tracking-widest uppercase text-[#6B5244]">
-            <Link to="/learn/classification" className="hover:text-[#6B0F1A] transition-colors">Classification ↗</Link>
-            <span className="opacity-40">·</span>
-            <Link to="/learn/terroir" className="hover:text-[#6B0F1A] transition-colors">Terroir ↗</Link>
-          </div>
-          <Link
-            to="/log/new"
-            className="block w-full text-center border border-[#6B0F1A] text-[#6B0F1A] px-4 py-2 text-[10px] tracking-widest uppercase hover:bg-[#6B0F1A] hover:text-[#F5F0E8] transition-colors"
-          >
-            Log a Tasting
-          </Link>
-        </div>
+        <Footer />
       </div>
     )
   }
 
+  // Region / Village card
   return (
     <div className="h-full flex flex-col">
-      {/* Header */}
       <div className="px-6 py-5 border-b border-[#D4C5A9]">
         <div className="flex justify-between items-start">
           <div>
@@ -152,10 +239,7 @@ export default function FactCard({ selection, type, onClose }) {
         </div>
       </div>
 
-      {/* Body */}
       <div className="flex-1 overflow-y-auto px-6 py-5 space-y-5">
-
-        {/* Grapes */}
         {(selection.grapes || appellation?.grapes) && (
           <div>
             <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Grapes</p>
@@ -167,7 +251,6 @@ export default function FactCard({ selection, type, onClose }) {
           </div>
         )}
 
-        {/* Style */}
         {(selection.style || appellation?.style) && (
           <div>
             <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Style</p>
@@ -177,7 +260,6 @@ export default function FactCard({ selection, type, onClose }) {
           </div>
         )}
 
-        {/* Terroir (village level) */}
         {type !== 'region' && appellation?.terroir && (
           <div>
             <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Terroir</p>
@@ -185,17 +267,13 @@ export default function FactCard({ selection, type, onClose }) {
           </div>
         )}
 
-        {/* Summary (region level) */}
         {type === 'region' && selection.summary && (
           <div>
             <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">About</p>
-            <p className="text-[#2C1810] text-sm leading-relaxed">
-              {selection.summary}
-            </p>
+            <p className="text-[#2C1810] text-sm leading-relaxed">{selection.summary}</p>
           </div>
         )}
 
-        {/* Aging rules */}
         {appellation?.agingRules && (
           <div>
             <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-1">Aging Rules</p>
@@ -203,7 +281,6 @@ export default function FactCard({ selection, type, onClose }) {
           </div>
         )}
 
-        {/* Facts */}
         {appellation?.facts?.length > 0 && (
           <div>
             <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-2">Key Facts</p>
@@ -218,7 +295,6 @@ export default function FactCard({ selection, type, onClose }) {
           </div>
         )}
 
-        {/* Related producers */}
         {relatedProducers.length > 0 && (
           <div>
             <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-2">
@@ -240,7 +316,6 @@ export default function FactCard({ selection, type, onClose }) {
           </div>
         )}
 
-        {/* Key producers list (from appellation data, text only) */}
         {appellation?.keyProducers?.length > 0 && relatedProducers.length === 0 && (
           <div>
             <p className="text-[10px] tracking-[0.25em] uppercase text-[#6B5244] mb-2">Key Producers</p>
@@ -253,22 +328,12 @@ export default function FactCard({ selection, type, onClose }) {
             </ul>
           </div>
         )}
+
+        <VintageStrip regionId={type === 'region' ? selection.id : selection.regionId} />
+        <NotesField id={selection.id} />
       </div>
 
-      {/* Footer CTA */}
-      <div className="px-6 py-4 border-t border-[#D4C5A9] space-y-2">
-        <div className="flex gap-3 text-[10px] tracking-widest uppercase text-[#6B5244]">
-          <Link to="/learn/classification" className="hover:text-[#6B0F1A] transition-colors">Classification ↗</Link>
-          <span className="opacity-40">·</span>
-          <Link to="/learn/terroir" className="hover:text-[#6B0F1A] transition-colors">Terroir ↗</Link>
-        </div>
-        <Link
-          to={`/log/new${appellation ? `?appellation=${appellation.id}` : ''}`}
-          className="block w-full text-center border border-[#6B0F1A] text-[#6B0F1A] px-4 py-2 text-[10px] tracking-widest uppercase hover:bg-[#6B0F1A] hover:text-[#F5F0E8] transition-colors"
-        >
-          Log a Tasting
-        </Link>
-      </div>
+      <Footer />
     </div>
   )
 }

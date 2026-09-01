@@ -28,6 +28,76 @@ const CRU_HOVER = {
   'premier-cru': '#C8C8C8',
 }
 
+// ── Label-search helpers ──────────────────────────────────────────────────────
+
+function normalize(str) {
+  return str
+    .toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function findMatch(input, crus, villages) {
+  if (!input.trim() || !crus || !villages) return null
+
+  const norm = normalize(input).replace(/\b(19|20)\d{2}\b/g, '').replace(/\s+/g, ' ').trim()
+  if (!norm) return null
+
+  // Village context first — prevents GC names that are substrings of village names from matching
+  let matchedVillage = null
+  const villagesSorted = [...villages.features].sort(
+    (a, b) => b.properties.name.length - a.properties.name.length
+  )
+  for (const f of villagesSorted) {
+    if (norm.includes(normalize(f.properties.name))) {
+      matchedVillage = f.properties
+      break
+    }
+  }
+
+  const villageNorm = matchedVillage ? normalize(matchedVillage.name) : null
+  const gcs = crus.features
+    .filter(f => f.properties.level === 'grand-cru')
+    .sort((a, b) => b.properties.name.length - a.properties.name.length)
+
+  for (const f of gcs) {
+    const gcNorm = normalize(f.properties.name)
+    if (villageNorm && villageNorm.includes(gcNorm)) continue
+    if (norm.includes(gcNorm)) return { level: 'grand-cru', ...f.properties }
+  }
+
+  const pcs = crus.features
+    .filter(f => {
+      if (f.properties.level !== 'premier-cru') return false
+      return matchedVillage ? f.properties.villageId === matchedVillage.id : true
+    })
+    .sort((a, b) => b.properties.name.length - a.properties.name.length)
+
+  for (const f of pcs) {
+    const pcNorm = normalize(f.properties.name)
+    if (pcNorm.length >= 4 && norm.includes(pcNorm)) return { level: 'premier-cru', ...f.properties }
+  }
+
+  if (matchedVillage) return { level: 'village', ...matchedVillage }
+
+  const REGIONS = [
+    { id: 'cote-de-nuits',    name: 'Côte de Nuits',    regionId: 'cote-de-nuits' },
+    { id: 'cote-de-beaune',   name: 'Côte de Beaune',   regionId: 'cote-de-beaune' },
+    { id: 'chablis',          name: 'Chablis',           regionId: 'chablis' },
+    { id: 'cote-chalonnaise', name: 'Côte Chalonnaise',  regionId: 'cote-chalonnaise' },
+    { id: 'maconnais',        name: 'Mâconnais',         regionId: 'maconnais' },
+  ]
+  for (const r of REGIONS) {
+    if (norm.includes(normalize(r.name))) return { level: 'region', ...r }
+  }
+
+  return null
+}
+
+// ── Map internals ─────────────────────────────────────────────────────────────
+
 function regionStyle(id, selectedRegion) {
   const isDimmed = selectedRegion && selectedRegion.id !== id
   const isSelected = selectedRegion?.id === id
@@ -47,7 +117,6 @@ function MapController({ selectedRegion, selectedVillage, regions, crus }) {
   useEffect(() => {
     if (!regions) return
     if (!selectedRegion) {
-      // Skip the fly-back on initial mount — MapContainer's center+zoom handles it
       if (!mounted.current) { mounted.current = true; return }
       map.flyToBounds(L.geoJSON(regions).getBounds().pad(0.05), { duration: 0.55 })
       return
@@ -83,26 +152,26 @@ function BackgroundClick({ onClearRef }) {
   return null
 }
 
+// ── Component ─────────────────────────────────────────────────────────────────
+
 export default function BurgundyMap({
   selectedRegion, onSelectRegion,
   selectedVillage, onSelectVillage,
   onSelectCru,
-  initialHighlight,
 }) {
   const [regions, setRegions] = useState(null)
   const [villages, setVillages] = useState(null)
   const [crus, setCrus] = useState(null)
+  const [searchInput, setSearchInput] = useState('')
 
   const regionLayerRef = useRef(null)
   const selectedRegionRef = useRef(selectedRegion)
   const selectedVillageRef = useRef(selectedVillage)
   const onClearRef = useRef(null)
-  const highlightAppliedRef = useRef(false)
 
   useEffect(() => { selectedRegionRef.current = selectedRegion }, [selectedRegion])
   useEffect(() => { selectedVillageRef.current = selectedVillage }, [selectedVillage])
 
-  // onClear: clicking map background deselects
   onClearRef.current = () => {
     if (selectedVillageRef.current) { onSelectVillage(null); return }
     if (selectedRegionRef.current) { onSelectRegion(null) }
@@ -120,33 +189,6 @@ export default function BurgundyMap({
     })
   }, [])
 
-  // Apply a highlight coming from the Decode page once GeoJSON data is ready
-  useEffect(() => {
-    if (!regions || !villages || !crus) return
-    if (!initialHighlight || highlightAppliedRef.current) return
-    highlightAppliedRef.current = true
-
-    const { level, id, regionId, villageId } = initialHighlight
-
-    const regionFeature = regions.features.find(f => f.properties.id === regionId)
-    if (!regionFeature) return
-    onSelectRegion(regionFeature.properties)
-
-    if (level === 'region') return
-
-    const villageId_ = level === 'village' ? id : villageId
-    const villageFeature = villages.features.find(f => f.properties.id === villageId_)
-    if (!villageFeature) return
-    onSelectVillage({ ...villageFeature.properties, coordinates: villageFeature.geometry.coordinates })
-
-    if (level === 'village') return
-
-    onSelectCru(initialHighlight)
-  // onSelectRegion/Village/Cru are stable callbacks — safe to omit
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [regions, villages, crus])
-
-  // Restyle regions imperatively when selection changes
   useEffect(() => {
     regionLayerRef.current?.eachLayer(layer => {
       const id = layer.feature.properties.id
@@ -154,10 +196,28 @@ export default function BurgundyMap({
     })
   }, [selectedRegion])
 
+  const searchMatch = useMemo(() => findMatch(searchInput, crus, villages), [searchInput, crus, villages])
+
+  function applySearchMatch(match) {
+    if (!match || !regions || !villages) return
+    const { level, id, regionId, villageId } = match
+    const regionFeature = regions.features.find(f => f.properties.id === regionId)
+    if (!regionFeature) { setSearchInput(''); return }
+    onSelectRegion(regionFeature.properties)
+    if (level === 'region') { setSearchInput(''); return }
+    const villageId_ = level === 'village' ? id : villageId
+    const villageFeature = villages.features.find(f => f.properties.id === villageId_)
+    if (!villageFeature) { setSearchInput(''); return }
+    onSelectVillage({ ...villageFeature.properties, coordinates: villageFeature.geometry.coordinates })
+    if (level === 'village') { setSearchInput(''); return }
+    onSelectCru(match)
+    setSearchInput('')
+  }
+
   const onEachRegion = useMemo(() => (feature, layer) => {
     const { id, name } = feature.properties
     layer.on({
-      mouseover(e) {
+      mouseover() {
         if (selectedRegionRef.current && selectedRegionRef.current.id !== id) return
         layer.setStyle({ fillColor: REGION_HOVER[id], fillOpacity: 0.88 })
       },
@@ -171,7 +231,6 @@ export default function BurgundyMap({
       },
     })
     layer.bindTooltip(name, { className: 'burg-tooltip', sticky: false, direction: 'top', offset: [0, -4] })
-  // onSelectRegion is stable (defined in Home.jsx)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -211,6 +270,11 @@ export default function BurgundyMap({
 
   if (!regions) return <div className="w-full h-full bg-[#2C1810]" />
 
+  const levelLabel = m =>
+    m.level === 'grand-cru' ? 'Grand Cru' :
+    m.level === 'premier-cru' ? 'Premier Cru' :
+    m.level === 'village' ? 'Village' : 'Region'
+
   return (
     <div className="relative w-full h-full">
       <MapContainer
@@ -226,7 +290,6 @@ export default function BurgundyMap({
           maxZoom={16}
         />
 
-        {/* Region polygons */}
         <GeoJSON
           key="regions"
           data={regions}
@@ -235,7 +298,6 @@ export default function BurgundyMap({
           ref={regionLayerRef}
         />
 
-        {/* Village dots — shown when a region is selected */}
         {selectedRegion && !selectedVillage && villagesInRegion.map(feature => {
           const { id, name } = feature.properties
           const [lon, lat] = feature.geometry.coordinates
@@ -259,7 +321,6 @@ export default function BurgundyMap({
           )
         })}
 
-        {/* Cru polygons — shown when a village is selected */}
         {selectedVillage && crusForVillage.length > 0 && (
           <GeoJSON
             key={selectedVillage.id}
@@ -277,6 +338,33 @@ export default function BurgundyMap({
         />
         <BackgroundClick onClearRef={onClearRef} />
       </MapContainer>
+
+      {/* Search bar */}
+      <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[900] w-64 sm:w-80">
+        <input
+          type="text"
+          value={searchInput}
+          onChange={e => setSearchInput(e.target.value)}
+          onKeyDown={e => { if (e.key === 'Enter' && searchMatch) applySearchMatch(searchMatch) }}
+          placeholder="Search appellation or label…"
+          className="w-full bg-[#FDFAF5]/95 border border-[#D4C5A9] px-3 py-2 text-sm text-[#2C1810] placeholder-[#B8A898] focus:outline-none focus:border-[#C9A84C] shadow-sm"
+        />
+        {searchInput.trim() && searchMatch && (
+          <button
+            onClick={() => applySearchMatch(searchMatch)}
+            className="w-full text-left bg-[#FDFAF5]/95 border-x border-b border-[#D4C5A9] px-3 py-2 text-xs shadow-sm hover:bg-[#EDE6D6] transition-colors"
+          >
+            <span className="text-[#C9A84C] mr-1.5">✦</span>
+            <span className="text-[#6B0F1A] font-medium">{searchMatch.name}</span>
+            <span className="text-[#9A7B6A] ml-1.5">· {levelLabel(searchMatch)}</span>
+          </button>
+        )}
+        {searchInput.trim() && !searchMatch && (
+          <div className="w-full bg-[#FDFAF5]/95 border-x border-b border-[#D4C5A9] px-3 py-2 text-xs text-[#9A7B6A] shadow-sm">
+            No match found
+          </div>
+        )}
+      </div>
 
       {/* Back buttons */}
       {selectedVillage && (

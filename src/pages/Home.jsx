@@ -1,11 +1,8 @@
 import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
 import FactCard from '../components/FactCard/FactCard'
 import BurgundyMap from '../components/Map/BurgundyMap'
 
 export default function Home() {
-  const { state } = useLocation()
-  const initialHighlight = state?.highlight ?? null
   const [selectedRegion, setSelectedRegion] = useState(null)
   const [selectedVillage, setSelectedVillage] = useState(null)
   const [cardData, setCardData] = useState(null)
@@ -102,7 +99,6 @@ export default function Home() {
           selectedVillage={selectedVillage}
           onSelectVillage={handleSelectVillage}
           onSelectCru={handleSelectCru}
-          initialHighlight={initialHighlight}
         />
       </div>
     </div>

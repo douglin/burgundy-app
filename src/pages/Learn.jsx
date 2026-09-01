@@ -15,6 +15,13 @@ const TOPICS = [
     desc: "Why two wines from the same grape taste so different depending on where the vines grow. Covers the Côte d'Or slope, soil types, the difference between Côte de Nuits and Côte de Beaune, and why Chablis is unlike anything else.",
     detail: 'The organizing principle behind the whole classification.',
   },
+  {
+    to: '/learn/quiz',
+    eyebrow: 'Practice',
+    title: 'Quiz',
+    desc: 'Test your knowledge of Burgundy geography, producers, grape varieties, and vintages with a 10-question session drawn from a curated question bank.',
+    detail: 'See what you know — and what to revisit on the map.',
+  },
 ]
 
 export default function Learn() {
