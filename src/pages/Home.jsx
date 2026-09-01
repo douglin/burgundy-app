@@ -55,7 +55,7 @@ export default function Home() {
       {!panelOpen && (
         <div className="hidden lg:flex flex-col justify-center px-10 text-[#EDE6D6] bg-[#2C1810] w-64 flex-shrink-0">
           <p className="text-[#9A7B6A] text-[10px] tracking-[0.3em] uppercase mb-3">
-            France · Bourgogne
+            France · Burgundy
           </p>
           <p
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
