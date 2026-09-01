@@ -3,7 +3,7 @@ import FactCard from '../components/FactCard/FactCard'
 import BurgundyMap from '../components/Map/BurgundyMap'
 
 const SNAP_H = {
-  peek: 'h-[120px]',
+  peek: 'h-[136px]',
   half: 'h-[45vh]',
   full: 'h-[85vh]',
 }
@@ -132,11 +132,11 @@ export default function Home() {
           <>
             {/* Drag handle — mobile only; touch events here so content scrolls freely */}
             <div
-              className="sm:hidden flex-shrink-0 h-10 flex justify-center items-center touch-none cursor-grab active:cursor-grabbing"
+              className="sm:hidden flex-shrink-0 h-14 flex justify-center items-end pb-3 touch-none cursor-grab active:cursor-grabbing"
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
-              <div className="w-10 h-1 rounded-full bg-[#D4C5A9]" />
+              <div className="w-20 h-[5px] rounded-full bg-[#C4B49E]" />
             </div>
 
             <div className="flex-1 min-h-0 sm:h-full overflow-hidden">
