@@ -1,20 +1,16 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import FactCard from '../components/FactCard/FactCard'
 import BurgundyMap from '../components/Map/BurgundyMap'
 
-const SNAP_H = {
-  peek: 'h-[136px]',
-  half: 'h-[45vh]',
-  full: 'h-[85vh]',
-}
+const PEEK_H = 'h-[120px]'
+const FULL_H = 'h-[90vh]'
 
 export default function Home() {
   const [selectedRegion, setSelectedRegion] = useState(null)
   const [selectedVillage, setSelectedVillage] = useState(null)
   const [cardData, setCardData] = useState(null)
   const [cardType, setCardType] = useState(null)
-  const [snapState, setSnapState] = useState('peek')
-  const touchStartY = useRef(null)
+  const [expanded, setExpanded] = useState(false)
 
   function handleSelectRegion(props) {
     if (!props) {
@@ -28,7 +24,7 @@ export default function Home() {
     setSelectedVillage(null)
     setCardData(props)
     setCardType('region')
-    setSnapState('peek')
+    setExpanded(false)
   }
 
   function handleSelectVillage(props) {
@@ -41,13 +37,13 @@ export default function Home() {
     setSelectedVillage(props)
     setCardData(props)
     setCardType('village')
-    setSnapState('peek')
+    setExpanded(false)
   }
 
   function handleSelectCru(props) {
     setCardData(props)
     setCardType('cru')
-    setSnapState('peek')
+    setExpanded(false)
   }
 
   function handleClose() {
@@ -55,21 +51,7 @@ export default function Home() {
     setSelectedVillage(null)
     setCardData(null)
     setCardType(null)
-  }
-
-  function handleTouchStart(e) {
-    touchStartY.current = e.touches[0].clientY
-  }
-
-  function handleTouchEnd(e) {
-    if (touchStartY.current === null) return
-    const dy = touchStartY.current - e.changedTouches[0].clientY
-    if (dy > 30) {
-      setSnapState(s => s === 'peek' ? 'half' : 'full')
-    } else if (dy < -30) {
-      setSnapState(s => s === 'full' ? 'half' : 'peek')
-    }
-    touchStartY.current = null
+    setExpanded(false)
   }
 
   const panelOpen = !!cardData
@@ -111,32 +93,52 @@ export default function Home() {
           onSelectVillage={handleSelectVillage}
           onSelectCru={handleSelectCru}
           sheetOpen={panelOpen}
-          snapState={panelOpen ? snapState : null}
+          sheetExpanded={panelOpen && expanded}
         />
       </div>
 
       {/* Fact card:
-            mobile  — swipeable snap bottom sheet (peek → half → full)
-            desktop — static side panel to the left of the map          */}
+            mobile  — bottom sheet: tap peek strip to expand, chevron to collapse
+            desktop — static side panel to the left of the map                    */}
       <div
         className={`
           bg-[#FDFAF5] border-[#D4C5A9] overflow-hidden transition-all duration-300
           fixed bottom-0 left-0 right-0 z-[500] border-t
           sm:static sm:flex-shrink-0 sm:border-r sm:border-t-0 sm:z-auto sm:order-first
           ${panelOpen
-            ? `flex flex-col ${SNAP_H[snapState]} sm:block sm:h-auto sm:w-72`
+            ? `flex flex-col ${expanded ? FULL_H : PEEK_H} sm:block sm:h-auto sm:w-72`
             : 'h-0 sm:w-0'}
         `}
       >
         {panelOpen && (
           <>
-            {/* Drag handle — mobile only; touch events here so content scrolls freely */}
+            {/* Peek tap strip — mobile only.
+                In peek mode the whole strip expands the card on tap.
+                In full mode just shows the collapse chevron.            */}
             <div
-              className="sm:hidden flex-shrink-0 h-14 flex justify-center items-end pb-3 touch-none cursor-grab active:cursor-grabbing"
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
+              className={`sm:hidden flex-shrink-0 h-9 flex items-center px-4 ${!expanded ? 'cursor-pointer justify-center' : 'justify-between'}`}
+              onClick={!expanded ? () => setExpanded(true) : undefined}
             >
-              <div className="w-20 h-[5px] rounded-full bg-[#C4B49E]" />
+              {expanded ? (
+                <>
+                  <span className="text-[10px] tracking-widest uppercase text-[#9A7B6A]">
+                    {cardData?.name}
+                  </span>
+                  <button
+                    onClick={() => setExpanded(false)}
+                    className="text-[#9A7B6A] hover:text-[#6B0F1A] p-1 -mr-1"
+                    aria-label="Collapse"
+                  >
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                </>
+              ) : (
+                <svg className="w-5 h-5 text-[#B8A898]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+                </svg>
+              )}
             </div>
 
             <div className="flex-1 min-h-0 sm:h-full overflow-hidden">

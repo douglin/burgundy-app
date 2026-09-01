@@ -159,7 +159,7 @@ export default function BurgundyMap({
   selectedVillage, onSelectVillage,
   onSelectCru,
   sheetOpen,
-  snapState,
+  sheetExpanded,
 }) {
   const [regions, setRegions] = useState(null)
   const [villages, setVillages] = useState(null)
@@ -372,7 +372,7 @@ export default function BurgundyMap({
       {selectedVillage && (
         <button
           onClick={() => onSelectVillage(null)}
-          className={`absolute left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors sm:bottom-4 ${snapState === 'full' ? 'bottom-[87vh]' : snapState === 'half' ? 'bottom-[47vh]' : snapState === 'peek' ? 'bottom-[144px]' : 'bottom-4'}`}
+          className={`absolute left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors sm:bottom-4 ${sheetExpanded ? 'bottom-[92vh]' : sheetOpen ? 'bottom-[128px]' : 'bottom-4'}`}
         >
           ← Back to {selectedRegion?.name}
         </button>
@@ -380,7 +380,7 @@ export default function BurgundyMap({
       {selectedRegion && !selectedVillage && (
         <button
           onClick={() => onSelectRegion(null)}
-          className={`absolute left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors sm:bottom-4 ${snapState === 'full' ? 'bottom-[87vh]' : snapState === 'half' ? 'bottom-[47vh]' : snapState === 'peek' ? 'bottom-[144px]' : 'bottom-4'}`}
+          className={`absolute left-1/2 -translate-x-1/2 z-[1000] text-[10px] tracking-widest uppercase text-[#C9A84C] bg-[#2C1810]/80 px-3 py-1.5 hover:bg-[#2C1810] transition-colors sm:bottom-4 ${sheetExpanded ? 'bottom-[92vh]' : sheetOpen ? 'bottom-[128px]' : 'bottom-4'}`}
         >
           ← Back to all regions
         </button>
