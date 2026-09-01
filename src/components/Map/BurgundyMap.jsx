@@ -340,8 +340,8 @@ export default function BurgundyMap({
         <BackgroundClick onClearRef={onClearRef} />
       </MapContainer>
 
-      {/* Search bar */}
-      <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[900] w-64 sm:w-80">
+      {/* Search bar — main map view only */}
+      {!selectedRegion && <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[900] w-64 sm:w-80">
         <input
           type="text"
           value={searchInput}
@@ -365,7 +365,7 @@ export default function BurgundyMap({
             No match found
           </div>
         )}
-      </div>
+      </div>}
 
       {/* Back buttons — float above the bottom sheet on mobile */}
       {selectedVillage && (
