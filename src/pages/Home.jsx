@@ -112,40 +112,24 @@ export default function Home() {
       >
         {panelOpen && (
           <>
-            {/* Peek tap strip — mobile only.
-                In peek mode the whole strip expands the card on tap.
-                In full mode just shows the collapse chevron.            */}
-            <div
-              className={`sm:hidden flex-shrink-0 h-9 flex items-center px-4 ${!expanded ? 'cursor-pointer justify-center' : 'justify-between'}`}
-              onClick={!expanded ? () => setExpanded(true) : undefined}
-            >
-              {expanded ? (
-                <>
-                  <span className="text-[10px] tracking-widest uppercase text-[#9A7B6A]">
-                    {cardData?.name}
-                  </span>
-                  <button
-                    onClick={() => setExpanded(false)}
-                    className="text-[#9A7B6A] hover:text-[#6B0F1A] p-1 -mr-1"
-                    aria-label="Collapse"
-                  >
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                </>
-              ) : (
+            {/* Peek tap strip — mobile only, shown only when collapsed */}
+            {!expanded && (
+              <div
+                className="sm:hidden flex-shrink-0 h-9 flex justify-center items-center cursor-pointer"
+                onClick={() => setExpanded(true)}
+              >
                 <svg className="w-5 h-5 text-[#B8A898]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
                 </svg>
-              )}
-            </div>
+              </div>
+            )}
 
             <div className="flex-1 min-h-0 sm:h-full overflow-hidden">
               <FactCard
                 selection={cardData}
                 type={cardType}
                 onClose={handleClose}
+                onCollapse={expanded ? () => setExpanded(false) : undefined}
               />
             </div>
           </>

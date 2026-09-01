@@ -98,7 +98,21 @@ const Footer = () => (
   </div>
 )
 
-export default function FactCard({ selection, type, onClose }) {
+function CollapseBtn({ onCollapse }) {
+  return (
+    <button
+      onClick={onCollapse}
+      className="sm:hidden text-[#9A7B6A] hover:text-[#6B0F1A] transition-colors"
+      aria-label="Collapse"
+    >
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+  )
+}
+
+export default function FactCard({ selection, type, onClose, onCollapse }) {
   if (!selection) return null
 
   const appellation = type === 'village'
@@ -132,7 +146,10 @@ export default function FactCard({ selection, type, onClose }) {
                 {LEVEL_CONTEXT[selection.level]}
               </p>
             </div>
-            <button onClick={onClose} className="text-[#6B5244] hover:text-[#6B0F1A] text-lg leading-none mt-0.5 ml-4 flex-shrink-0" aria-label="Close">×</button>
+            <div className="flex items-center gap-3 ml-4 flex-shrink-0 mt-0.5">
+              {onCollapse && <CollapseBtn onCollapse={onCollapse} />}
+              <button onClick={onClose} className="text-[#6B5244] hover:text-[#6B0F1A] text-lg leading-none" aria-label="Close">×</button>
+            </div>
           </div>
         </div>
         <div className="flex-1 overflow-y-auto px-6 py-5 space-y-4">
@@ -229,13 +246,10 @@ export default function FactCard({ selection, type, onClose }) {
               {LEVEL_CONTEXT[type === 'region' ? 'region' : 'village']}
             </p>
           </div>
-          <button
-            onClick={onClose}
-            className="text-[#6B5244] hover:text-[#6B0F1A] text-lg leading-none mt-0.5 ml-4 flex-shrink-0"
-            aria-label="Close"
-          >
-            ×
-          </button>
+          <div className="flex items-center gap-3 ml-4 flex-shrink-0 mt-0.5">
+            {onCollapse && <CollapseBtn onCollapse={onCollapse} />}
+            <button onClick={onClose} className="text-[#6B5244] hover:text-[#6B0F1A] text-lg leading-none" aria-label="Close">×</button>
+          </div>
         </div>
       </div>
 
