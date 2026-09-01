@@ -1,12 +1,20 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import FactCard from '../components/FactCard/FactCard'
 import BurgundyMap from '../components/Map/BurgundyMap'
+
+const SNAP_H = {
+  peek: 'h-[120px]',
+  half: 'h-[45vh]',
+  full: 'h-[85vh]',
+}
 
 export default function Home() {
   const [selectedRegion, setSelectedRegion] = useState(null)
   const [selectedVillage, setSelectedVillage] = useState(null)
   const [cardData, setCardData] = useState(null)
   const [cardType, setCardType] = useState(null)
+  const [snapState, setSnapState] = useState('peek')
+  const touchStartY = useRef(null)
 
   function handleSelectRegion(props) {
     if (!props) {
@@ -20,6 +28,7 @@ export default function Home() {
     setSelectedVillage(null)
     setCardData(props)
     setCardType('region')
+    setSnapState('peek')
   }
 
   function handleSelectVillage(props) {
@@ -32,11 +41,13 @@ export default function Home() {
     setSelectedVillage(props)
     setCardData(props)
     setCardType('village')
+    setSnapState('peek')
   }
 
   function handleSelectCru(props) {
     setCardData(props)
     setCardType('cru')
+    setSnapState('peek')
   }
 
   function handleClose() {
@@ -44,6 +55,21 @@ export default function Home() {
     setSelectedVillage(null)
     setCardData(null)
     setCardType(null)
+  }
+
+  function handleTouchStart(e) {
+    touchStartY.current = e.touches[0].clientY
+  }
+
+  function handleTouchEnd(e) {
+    if (touchStartY.current === null) return
+    const dy = touchStartY.current - e.changedTouches[0].clientY
+    if (dy > 30) {
+      setSnapState(s => s === 'peek' ? 'half' : 'full')
+    } else if (dy < -30) {
+      setSnapState(s => s === 'full' ? 'half' : 'peek')
+    }
+    touchStartY.current = null
   }
 
   const panelOpen = !!cardData
@@ -85,26 +111,42 @@ export default function Home() {
           onSelectVillage={handleSelectVillage}
           onSelectCru={handleSelectCru}
           sheetOpen={panelOpen}
+          snapState={panelOpen ? snapState : null}
         />
       </div>
 
       {/* Fact card:
-            mobile  — fixed bottom sheet sliding up over the map
+            mobile  — swipeable snap bottom sheet (peek → half → full)
             desktop — static side panel to the left of the map          */}
       <div
         className={`
           bg-[#FDFAF5] border-[#D4C5A9] overflow-hidden transition-all duration-300
           fixed bottom-0 left-0 right-0 z-[500] border-t
           sm:static sm:flex-shrink-0 sm:border-r sm:border-t-0 sm:z-auto sm:order-first
-          ${panelOpen ? 'h-[45vh] sm:h-auto sm:w-72' : 'h-0 sm:w-0'}
+          ${panelOpen
+            ? `flex flex-col ${SNAP_H[snapState]} sm:block sm:h-auto sm:w-72`
+            : 'h-0 sm:w-0'}
         `}
       >
         {panelOpen && (
-          <FactCard
-            selection={cardData}
-            type={cardType}
-            onClose={handleClose}
-          />
+          <>
+            {/* Drag handle — mobile only; touch events here so content scrolls freely */}
+            <div
+              className="sm:hidden flex-shrink-0 h-10 flex justify-center items-center touch-none cursor-grab active:cursor-grabbing"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              <div className="w-10 h-1 rounded-full bg-[#D4C5A9]" />
+            </div>
+
+            <div className="flex-1 min-h-0 sm:h-full overflow-hidden">
+              <FactCard
+                selection={cardData}
+                type={cardType}
+                onClose={handleClose}
+              />
+            </div>
+          </>
         )}
       </div>
     </div>
